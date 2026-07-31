@@ -12,7 +12,7 @@ The site maintains **two independent UI codebases**. `App` mounts exactly one of
 | Hero | Two-column grid + float animation | Full-bleed media + stacked CTAs |
 | Services | 4-column / 2-column card grid | Horizontal snap carousel |
 | How-it-works | Horizontal step row | Vertical timeline |
-| Settings | Inline lang + theme controls | Bottom sheet from top-bar control |
+| Settings | Inline lang + theme controls | Compact ET/EN/RU chips + theme toggle in top bar |
 | Contact CTA | Header / section buttons | Sticky call FAB + large call row |
 | Safe areas | Not required | `env(safe-area-inset-*)` |
 
@@ -32,9 +32,8 @@ The site maintains **two independent UI codebases**. `App` mounts exactly one of
 
 | Component | Role |
 |-----------|------|
-| `MobileTopBar` | Compact brand bar + settings trigger |
+| `MobileTopBar` | Compact brand bar + language chips + theme toggle |
 | `MobileTabBar` | Five-tab primary navigation with icons |
-| `MobileSettingsSheet` | Theme toggle + language picker |
 | `MobileHero` | `#top` |
 | `MobileServices` | `#services` |
 | `MobilePlatform` | `#platform` |

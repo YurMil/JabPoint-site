@@ -55,10 +55,44 @@
   color: var(--red);
 }
 
-.m-topbar__gear {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+.m-topbar__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.m-topbar__langs {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  background: var(--chip);
+}
+
+.m-topbar__lang {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--dim);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.m-topbar__lang.is-active {
+  background: var(--red);
+  color: #fff;
+}
+
+.m-topbar__theme {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
   border: 1px solid var(--hair);
   background: var(--chip);
   display: grid;
@@ -66,8 +100,8 @@
 }
 
 .m-topbar__theme-dot {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
 }
 
@@ -83,7 +117,7 @@
 
 /* ── Hero ── */
 .m-hero {
-  scroll-margin-top: 64px;
+  scroll-margin-top: 72px;
 }
 
 .m-hero__media {
@@ -233,7 +267,7 @@
 /* ── Sections ── */
 .m-section {
   padding: 36px 18px 8px;
-  scroll-margin-top: 64px;
+  scroll-margin-top: 72px;
 }
 
 .m-section--flush {
@@ -728,117 +762,11 @@
   white-space: nowrap;
 }
 
-/* ── Settings sheet ── */
-.m-sheet {
-  position: fixed;
-  inset: 0;
-  z-index: 80;
-  display: flex;
-  align-items: flex-end;
-  animation: mSheetIn 0.2s ease;
-}
-
-.m-sheet__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  border: none;
-  cursor: pointer;
-}
-
-.m-sheet__panel {
-  position: relative;
-  width: 100%;
-  padding: 10px 18px calc(22px + var(--safe-bottom));
-  border-radius: 22px 22px 0 0;
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.35);
-  animation: mPanelUp 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.m-sheet__handle {
-  width: 40px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--hair);
-  margin: 4px auto 16px;
-}
-
-.m-sheet__title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 0 18px;
-}
-
-.m-sheet__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 4px 18px;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.m-sheet__row-label {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.m-sheet__toggle {
-  width: 52px;
-  height: 30px;
-  border-radius: 999px;
-  border: 1px solid var(--hair);
-  background: var(--chip);
-  position: relative;
-}
-
-.m-sheet__toggle-knob {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-
-.m-sheet__toggle-knob.is-dark {
-  background: linear-gradient(135deg, #edeef0 48%, #2a2e34 52%);
-}
-
-.m-sheet__toggle-knob.is-light {
-  transform: translateX(22px);
-  background: linear-gradient(135deg, #ffd35c, #e1191f);
-}
-
-.m-sheet__langs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 18px;
-}
-
-.m-sheet__lang {
-  min-height: 44px;
-  border-radius: 12px;
-  border: 1px solid var(--hair);
-  background: var(--chip);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.m-sheet__lang.is-active {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
-}
-
 @media (max-width: 360px) {
+  .m-topbar__name {
+    display: none;
+  }
+
   .m-hero__actions {
     grid-template-columns: 1fr;
   }
