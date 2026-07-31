@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { site } from '../data/site'
 import { useApp } from '../hooks/useApp'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { MobileTopBar } from './components/MobileTopBar'
 import { MobileTabBar } from './components/MobileTabBar'
-import { MobileSettingsSheet } from './components/MobileSettingsSheet'
 import { MobileHero } from './components/MobileHero'
 import { MobileServices } from './components/MobileServices'
 import { MobilePlatform } from './components/MobilePlatform'
@@ -16,8 +15,7 @@ import './mobile.css'
 /** Native-feel mobile shell — separate layout & components from desktop. */
 export default function MobileApp() {
   const { theme, t } = useApp()
-  const activeId = useActiveSection()
-  const [settingsOpen, setSettingsOpen] = useState(false)
+  const { activeId, goToSection } = useActiveSection()
 
   useEffect(() => {
     document.body.classList.add('is-mobile-shell')
@@ -26,7 +24,7 @@ export default function MobileApp() {
 
   return (
     <div className={`jp m-app${theme === 'light' ? ' light' : ''}`}>
-      <MobileTopBar onOpenSettings={() => setSettingsOpen(true)} />
+      <MobileTopBar />
 
       <main className="m-main">
         <MobileHero />
@@ -41,8 +39,7 @@ export default function MobileApp() {
         <span>{t.callUs}</span>
       </a>
 
-      <MobileTabBar activeId={activeId} />
-      <MobileSettingsSheet open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <MobileTabBar activeId={activeId} onNavigate={goToSection} />
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import { useApp } from '../../hooks/useApp'
-import { scrollToSection } from '../../hooks/useActiveSection'
 import {
   IconContact,
   IconHome,
@@ -16,9 +15,10 @@ type Tab = {
 
 type Props = {
   activeId: string
+  onNavigate: (id: string) => void
 }
 
-export function MobileTabBar({ activeId }: Props) {
+export function MobileTabBar({ activeId, onNavigate }: Props) {
   const { t } = useApp()
 
   const tabs: Tab[] = [
@@ -38,7 +38,7 @@ export function MobileTabBar({ activeId }: Props) {
             key={id}
             type="button"
             className={`m-tabbar__item${active ? ' is-active' : ''}`}
-            onClick={() => scrollToSection(id)}
+            onClick={() => onNavigate(id)}
             aria-current={active ? 'page' : undefined}
           >
             <Icon className="m-tabbar__icon" />
