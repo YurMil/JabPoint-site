@@ -12,7 +12,7 @@ export const seo = {
   title: 'JabPoint Tallinn — Self-service, automotive platform & detailing',
 
   description:
-    'JabPoint is a modern automotive platform in Tallinn (Plaasi tn 2): self-service, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
+    'JabPoint is a modern automotive platform in Tallinn (Plaasi tn 2): self-service, professional workshop, detailing, tyre service and marketplace in one place. Open 10.00–21.00.',
 
   ogImageAlt: 'JabPoint Tallinn — modern automotive space',
 
@@ -60,8 +60,8 @@ export function buildLocalBusinessJsonLd(): Record<string, unknown> {
         'Saturday',
         'Sunday',
       ],
-      opens: '00:00',
-      closes: '23:59',
+      opens: '10:00',
+      closes: '21:00',
     },
     sameAs: site.social.filter((s) => Boolean(s.href)).map((s) => s.href),
   }

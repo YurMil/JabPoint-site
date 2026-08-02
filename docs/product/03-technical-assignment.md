@@ -193,8 +193,8 @@ CTA: contact / partnership enquiry (email or form).
 | Title | Let's Talk |
 | Subtitle | Need help with your car? We're here for you. |
 | Address | Plaasi tn 2, Tallinn |
-| Amenities | Free parking · 24/7 · Lounge · Online booking |
-| Phone | +372 57919043 (`tel:+37257919043`) |
+| Amenities | Free parking · 10.00–21.00 · Lounge · Online booking |
+| Phone | +372 5565 1117 (`tel:+37255651117`) |
 | Email | teamjabpoint@gmail.com (`mailto:teamjabpoint@gmail.com`) |
 | Map | Interactive Google Maps pin for the address |
 | Social | Instagram, TikTok, Facebook, Telegram |
@@ -209,7 +209,7 @@ Suggested shape (illustrative — adapt to existing types):
 
 ```ts
 contact: {
-  phone: { value: '+372 57919043', href: 'tel:+37257919043' },
+  phone: { value: '+372 5565 1117', href: 'tel:+37255651117' },
   email: { value: 'teamjabpoint@gmail.com', href: 'mailto:teamjabpoint@gmail.com' },
   address: {
     et: 'Plaasi tn 2, Tallinn',
@@ -217,11 +217,11 @@ contact: {
     ru: 'Plaasi tn 2, Таллинн',
   },
   hours: {
-    et: '24/7',
-    en: '24/7',
-    ru: '24/7',
+    et: '10.00–21.00 (tulevikus 24/7)',
+    en: '10.00–21.00 (24/7 planned)',
+    ru: '10.00–21.00 (в будущем 24/7)',
   },
-  amenities: ['Free parking', '24/7', 'Lounge', 'Online booking'],
+  amenities: ['Free parking', '10.00–21.00', 'Lounge', 'Online booking'],
 },
 stats: [
   { key: '5', labelKey: 'vehicleLifts' },

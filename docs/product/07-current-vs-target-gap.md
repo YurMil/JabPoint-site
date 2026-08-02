@@ -133,6 +133,8 @@ Record approved deviations here during refinement:
 | 2026-08-02 | Booking | integrations | **Altegio** wired to Book Now | Client |
 | 2026-08-02 | WhatsApp | same number? | **Yes** — `wa.me/37257919043` | Client |
 | 2026-08-02 | Hero media | video/photos | Deferred — later | Client |
+| 2026-08-02 | Phone | `+372 57919043` | **Superseded** — `+372 5565 1117` (phone and WhatsApp) | Client |
+| 2026-08-02 | Hours | `24/7` | **Superseded** — `10.00–21.00`, 24/7 stated as a future goal | Client |
 
 ## 11. Implementation progress (code)
 

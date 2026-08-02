@@ -85,12 +85,12 @@ export const site = {
 
   /** Contact details (labels come from i18n; values are shared) */
   contact: {
-    phone: { value: '+372 57919043', href: 'tel:+37257919043' },
+    phone: { value: '+372 5565 1117', href: 'tel:+37255651117' },
     email: { value: 'teamjabpoint@gmail.com', href: 'mailto:teamjabpoint@gmail.com' },
     /** Same business number as phone (client confirmed) */
     whatsapp: {
-      value: '+372 57919043',
-      href: 'https://wa.me/37257919043',
+      value: '+372 5565 1117',
+      href: 'https://wa.me/37255651117',
     },
     telegram: {
       value: '@JABPOINT',
@@ -102,14 +102,18 @@ export const site = {
       en: 'Plaasi tn 2, Tallinn',
       ru: 'Plaasi tn 2, Таллинн',
     },
+    /** Current opening hours; 24/7 is a stated future goal, not live yet */
     hours: {
-      et: '24/7',
-      en: '24/7',
-      ru: '24/7',
+      et: '10.00–21.00 (tulevikus 24/7)',
+      en: '10.00–21.00 (24/7 planned)',
+      ru: '10.00–21.00 (в будущем 24/7)',
     },
   },
 
-  /** Hero / platform stats (keys stay same in all languages; labels in i18n) */
+  /**
+   * Hero / platform stats (keys stay same in all languages; labels in i18n).
+   * `24/7` refers to online booking availability, not to opening hours.
+   */
   stats: [
     { key: '5' },
     { key: '2' },
