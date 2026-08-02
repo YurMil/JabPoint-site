@@ -4,6 +4,7 @@
  * ═══════════════════════════════════════════════════════════
  *
  * Change wording here. Contact values (phone, email) come from site.ts
+ * Canonical Stage-1 EN copy: docs/product/03-technical-assignment.md
  */
 
 import type { LangCode } from './site'
@@ -14,9 +15,15 @@ export type StepItem = { n: string; t: string; d: string }
 export type StatItem = { k: string; v: string }
 
 export type Dictionary = {
+  /** Document <title> and og:title when this language is active */
+  seoTitle: string
+  /** Meta description / og:description when this language is active */
+  seoDescription: string
   navServices: string
   navPlatform: string
+  navCommunity: string
   navHow: string
+  navPartners: string
   navContact: string
   navCta: string
   themeLabel: string
@@ -33,6 +40,10 @@ export type Dictionary = {
   svcTitle: string
   svcSub: string
   services: ServiceItem[]
+  communityTitle: string
+  communitySub: string
+  communityHighlights: FeatureItem[]
+  communityStory: string
   platBadge: string
   platTitle: string
   platSub: string
@@ -41,6 +52,12 @@ export type Dictionary = {
   platFeatures: FeatureItem[]
   howTitle: string
   steps: StepItem[]
+  partnersTitle: string
+  partnersSub: string
+  partnerPillars: FeatureItem[]
+  partnersGeoLabel: string
+  partnersGeo: string
+  partnersCta: string
   contactTitle: string
   contactSub: string
   contactLabels: {
@@ -51,6 +68,7 @@ export type Dictionary = {
   }
   mapTitle: string
   mapSub: string
+  openInMaps: string
   footer: string
   socialLabel: string
   menuOpen: string
@@ -60,81 +78,124 @@ export type Dictionary = {
     home: string
     services: string
     platform: string
-    how: string
+    community: string
     contact: string
   }
   callUs: string
+  /** Mobile floating CTA — book online */
+  fabBook: string
+  whatsapp: string
+  telegram: string
+  quickContactsLabel: string
 }
 
 export const dict: Record<LangCode, Dictionary> = {
   et: {
+    seoTitle: 'JabPoint Tallinn — iseteenindusgaraaž, autoteenindus ja detailing',
+    seoDescription:
+      'JabPoint on kaasaegne autoökosüsteem Tallinnas (Plaasi tn 2): iseteenindus, professionaalne töökoda, detailing, rehviteenus ja marketplace ühes kohas. 24/7.',
     navServices: 'Teenused',
     navPlatform: 'Platvorm',
+    navCommunity: 'Kogukond',
     navHow: 'Kuidas',
+    navPartners: 'Partnerid',
     navContact: 'Kontakt',
-    navCta: 'Broneeri aeg',
+    navCta: 'Broneeri',
     themeLabel: 'Vaheta teemat',
     themeDark: 'TUME',
     themeLight: 'HELE',
-    heroBadge: 'Iseteenindus · Tallinn',
-    heroTitle1: 'Autoteenindus,',
-    heroTitle2: 'mis liigub digitaalseks',
+    heroBadge: 'Tallinn · Plaasi tn 2',
+    heroTitle1: 'Kõik sinu autole',
+    heroTitle2: 'ühes kohas',
     heroSub:
-      'JabPoint on iseteeninduslik autoteenindus Tallinnas. Ehitame platvormi, mis viib broneerimise, diagnostika ja hinnapakkumised täisdigitaalseks — nii kliendile kui partnerile. Kuni selleni: tule kohale, tõsta auto tõstukile või usalda see meie meistritele.',
-    heroCta1: 'Broneeri aeg',
-    heroCta2: 'Platvormist lähemalt',
-    heroImgTag: 'Iseteeninduse boksid',
+      'JabPoint on kaasaegne autode ökosüsteem, mis ühendab iseteeninduse, professionaalse töökoja, detailing’u, rehviteenuse ja automarketplace’i ühes platvormis.',
+    heroCta1: 'Broneeri',
+    heroCta2: 'Meie teenused',
+    heroImgTag: 'Modern Automotive Space',
     stats: [
-      { k: '24/7', v: 'Broneerimine tulekul' },
-      { k: '6', v: 'Boksi ja tõstukit' },
-      { k: '3', v: 'Keelt teeninduses' },
+      { k: '5', v: 'Autotõstukit' },
+      { k: '2', v: 'Detailing’u boksi' },
+      { k: '24/7', v: 'Broneerimine saadaval' },
     ],
-    svcTitle: 'Mida me täna teeme',
-    svcSub: 'Neli teenust, mis on kohe saadaval — ilma ootejärjekorra ja üllatusarveteta.',
+    svcTitle: 'Meie teenused',
+    svcSub: 'Kõik, mis autoga seotud — ühes kohas.',
     services: [
       {
         n: 'S1',
-        t: 'Iseteenindus',
-        d: 'Rendi tõstuk ja tööriistad tunnitasu eest. Õlivahetus, pidurid, rehvid — teed ise, meistri nõuanne on kõrval.',
+        t: 'Iseteenindusgaraaž',
+        d: 'Tõstukid, professionaalne ja spetsiaalne tööriist, kompressorid ning kulumaterjalid iseseisvaks hoolduseks.',
       },
       {
         n: 'S2',
-        t: 'Hooldus ja remont',
-        d: 'Korraline hooldus, diagnostika ja remont meie meistrite käe all. Selge hinnapakkumine enne tööde algust.',
+        t: 'Autoteenindus',
+        d: 'Remont ja hooldus professionaalsete meistrite käe all.',
       },
       {
         n: 'S3',
-        t: 'Konsultatsioon',
-        d: 'Tehniline nõustamine: mis autol viga on, mis on hädavajalik ja mis võib oodata.',
+        t: 'Detailing',
+        d: 'Keemiline puhastus, poleerimine, kaitsekatted, täielik hooldus kerele ja salongile.',
       },
       {
         n: 'S4',
-        t: 'Autovalik',
-        d: 'Aitame kasutatud auto valida ja kontrollime selle enne ostu läbi — tehniliselt ja ajalooliselt.',
+        t: 'Rohkem teenuseid',
+        d: 'Rehvitöö, varuosade valik ja tellimine, diagnostika, PDR, toonimine, abi auto ostu-müügil (kontroll, müügieelne ettevalmistus, komisjon, väljaost).',
+      },
+      {
+        n: 'S5',
+        t: 'Detailing iseteenindus',
+        d: 'Isepesu, professionaalne keemia, harjad, märjad ja tavalised tolmuimejad.',
       },
     ],
-    platBadge: 'Arendusjärgus',
-    platTitle: 'Digitaalne platvorm autoteenindusele',
+    communityTitle: 'Atmosfäär ja kogukond',
+    communitySub: 'Rohkem kui teenindus — autoklubi kohtumisteks, ülevaadeteks ja üritusteks.',
+    communityHighlights: [
+      { t: 'Lounge', d: 'Puhkeala, kus oodata või lihtsalt olla.' },
+      { t: 'PlayStation 5', d: 'Mänguala, kuni auto valmis saab.' },
+      { t: 'Lauajalgpall', d: 'Kerge võistlusmeeleolu sõpradega.' },
+      { t: 'Ruumi rent', d: 'Koht kohtumisteks, shoot’ideks ja üritusteks.' },
+    ],
+    communityStory:
+      'JabPoint on autoklubi ja koht suhtlemiseks — mitte ainult boks, kuhu auto jätta.',
+    platBadge: 'Varsti',
+    platTitle: 'JabPoint Platform',
     platSub:
-      'Suur osa autoteeninduse protsessist käib endiselt telefoni ja paberi teel. Me viime selle ühte süsteemi: klient näeb hinda ja aega ette, partner saab tellimused, laoseisu ja aruandluse automaatselt.',
-    platCta: 'Liitu ooteringiga',
+      'Digitaalne ökosüsteem, mis ühendab autoomanikke, töökodasid, iseteenindusgaraaže, detailing-stuudioid, spetsialiste ja autosektori ettevõtteid üle Euroopa.',
+    platCta: 'Loe lähemalt',
     platNote: 'Beeta 2026',
     platFeatures: [
-      { t: 'Broneerimine reaalajas', d: 'Vaba boks, meister ja hind — kohe ekraanil.' },
-      { t: 'Digitaalne autopass', d: 'Kogu hooldusajalugu ja kviitungid ühes kohas.' },
-      { t: 'Läbipaistev hinnastamine', d: 'Hinnapakkumine enne tööd, muudatused kinnitusega.' },
-      { t: 'Partneri töölaud', d: 'Tellimused, koormus ja varuosad ühes vaates.' },
+      { t: 'Online-broneerimine', d: 'Broneeri paari klikiga.' },
+      { t: 'Hinnangud', d: 'Meistrite ja teenuste reitingud.' },
+      { t: 'Marketplace', d: 'Varuosad, autokeemia ja sõltumatute spetsialistide teenused.' },
+      { t: 'Üks äpp', d: 'Kogu infrastruktuur ühes rakenduses.' },
     ],
-    howTitle: 'Neli sammu boksini',
+    howTitle: 'Kuidas see töötab',
     steps: [
-      { n: '01', t: 'Võta ühendust', d: 'Helista või kirjuta — ütleme kohe, kas boks on vaba.' },
-      { n: '02', t: 'Vali formaat', d: 'Teed ise või teeme meie. Mõlemal juhul selge hind ette.' },
-      { n: '03', t: 'Tule kohale', d: 'Tõstuk, tööriistad ja valgus on valmis. Vajadusel meister kõrval.' },
-      { n: '04', t: 'Sõida edasi', d: 'Tööde kokkuvõte ja soovitused järgmiseks korraks.' },
+      { n: '01', t: 'Vali teenus', d: 'Vali vajalik teenus.' },
+      { n: '02', t: 'Broneeri', d: 'Vali sobiv aeg.' },
+      { n: '03', t: 'Tule kohale', d: 'Külasta JabPointi aadressil Plaasi tn 2, Tallinn.' },
+      { n: '04', t: 'Nauti', d: 'Auto on hooldatud, klient rahul.' },
     ],
-    contactTitle: 'Tule teenindusse',
-    contactSub:
-      'Räägime eesti, inglise ja vene keeles. Kirjuta, mis autoga tegu ja mida vaja — vastame kiiresti.',
+    partnersTitle: 'Partnerid ja frantsiis',
+    partnersSub: 'Töökohad meistritele, lava brändidele ja ühine mudel laienemiseks.',
+    partnerPillars: [
+      {
+        t: 'Meistritele',
+        d: 'Töökohad sõltumatutele spetsialistidele — PDR, elektrikud, diagnostikud.',
+      },
+      {
+        t: 'Brändidele',
+        d: 'Turundusplats tootjatele: reklaam, videosalvestus ja üritused.',
+      },
+      {
+        t: 'Frantsiis',
+        d: 'Üks bränd, üks broneerimissüsteem, üks äpp, üks kliendibaas ja ühised kvaliteedistandardid.',
+      },
+    ],
+    partnersGeoLabel: 'Arengugeograafia',
+    partnersGeo: 'Tallinn → Eesti → Läti → Leedu → Poola → Soome → Hispaania → Euroopa',
+    partnersCta: 'Kirjuta partnerlusest',
+    contactTitle: 'Räägime',
+    contactSub: 'Vajad abi autoga? Oleme sinu jaoks olemas.',
     contactLabels: {
       phone: 'Telefon',
       email: 'E-post',
@@ -142,8 +203,9 @@ export const dict: Record<LangCode, Dictionary> = {
       hours: 'Avatud',
     },
     mapTitle: 'JabPoint Tallinn',
-    mapSub: 'Iseteeninduse boksid, hooldus ja diagnostika ühe katuse all.',
-    footer: 'Iseteeninduslik autoteenindus',
+    mapSub: 'Tasuta parkimine · 24/7 · Lounge · Online-broneerimine',
+    openInMaps: 'Ava Google Mapsis',
+    footer: 'Kaasaegne autoökosüsteem',
     socialLabel: 'Sotsiaalmeedia',
     menuOpen: 'Ava menüü',
     menuClose: 'Sulge menüü',
@@ -151,80 +213,122 @@ export const dict: Record<LangCode, Dictionary> = {
       home: 'Avaleht',
       services: 'Teenused',
       platform: 'Platvorm',
-      how: 'Kuidas',
+      community: 'Kogukond',
       contact: 'Kontakt',
     },
     callUs: 'Helista',
+    fabBook: 'Broneeri',
+    whatsapp: 'WhatsApp',
+    telegram: 'Telegram',
+    quickContactsLabel: 'Kiire kontakt',
   },
 
   en: {
+    seoTitle: 'JabPoint Tallinn — Self-service garage, car service & detailing',
+    seoDescription:
+      'JabPoint is a modern automotive ecosystem in Tallinn (Plaasi tn 2): self-service garage, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
     navServices: 'Services',
     navPlatform: 'Platform',
+    navCommunity: 'Community',
     navHow: 'How it works',
-    navContact: 'Contact',
-    navCta: 'Book a slot',
+    navPartners: 'Partners',
+    navContact: 'Contacts',
+    navCta: 'Book Now',
     themeLabel: 'Switch theme',
     themeDark: 'DARK',
     themeLight: 'LIGHT',
-    heroBadge: 'Self-service · Tallinn',
-    heroTitle1: 'Car service,',
-    heroTitle2: 'moving to digital',
+    heroBadge: 'Tallinn · Plaasi tn 2',
+    heroTitle1: 'Everything for Your Car',
+    heroTitle2: 'in One Place',
     heroSub:
-      "JabPoint is a self-service garage in Tallinn. We're building a platform that moves booking, diagnostics and quotes fully digital — for customers and partners alike. Until then: drive over, take a lift and tools, or leave the job to our mechanics.",
-    heroCta1: 'Book a slot',
-    heroCta2: 'See the platform',
-    heroImgTag: 'Self-service bays',
+      'JabPoint is a modern automotive ecosystem combining self-service, professional workshop, detailing, tyre service and automotive marketplace in one platform.',
+    heroCta1: 'Book Now',
+    heroCta2: 'Our Services',
+    heroImgTag: 'Modern Automotive Space',
     stats: [
-      { k: '24/7', v: 'Booking coming soon' },
-      { k: '6', v: 'Bays and lifts' },
-      { k: '3', v: 'Languages on site' },
+      { k: '5', v: 'Vehicle Lifts' },
+      { k: '2', v: 'Detailing Bays' },
+      { k: '24/7', v: 'Booking Available' },
     ],
-    svcTitle: 'What we do today',
-    svcSub: 'Four services available right now — no queues, no surprise invoices.',
+    svcTitle: 'Our Services',
+    svcSub: 'Everything related to your car - in one place.',
     services: [
       {
         n: 'S1',
-        t: 'Self-service bay',
-        d: 'Rent a lift and tools by the hour. Oil, brakes, tyres — do it yourself with a mechanic within reach.',
+        t: 'Self-Service Garage',
+        d: 'Lifts, professional and specialised tools, compressors, and consumables for independent maintenance.',
       },
       {
         n: 'S2',
-        t: 'Service & repair',
-        d: 'Scheduled maintenance, diagnostics and repair by our mechanics. Clear quote before any work starts.',
+        t: 'Car Service',
+        d: 'Repair and scheduled maintenance by professional masters.',
       },
       {
         n: 'S3',
-        t: 'Consultation',
-        d: "Technical advice: what's actually wrong, what's urgent, and what can wait.",
+        t: 'Detailing',
+        d: 'Interior deep cleaning, polishing, protective coatings, full body and cabin care.',
       },
       {
         n: 'S4',
-        t: 'Car sourcing',
-        d: 'We help you pick a used car and inspect it before you buy — technically and by history.',
+        t: 'More Services',
+        d: 'Tyre fitting; parts selection and ordering; diagnostics; PDR; window tinting; assistance with buying and selling cars (inspection, pre-sale preparation, commission sales, buy-out).',
+      },
+      {
+        n: 'S5',
+        t: 'Detailing Self-Service',
+        d: 'Self-wash bay with professional chemicals, brushes, wet and dry vacuums.',
       },
     ],
-    platBadge: 'In development',
-    platTitle: 'A digital platform for car service',
+    communityTitle: 'Atmosphere & Community',
+    communitySub: 'More than a workshop — an automotive club for meet-ups, car reviews and events.',
+    communityHighlights: [
+      { t: 'Lounge', d: 'A rest zone to wait — or simply hang out.' },
+      { t: 'PlayStation 5', d: 'A play area while the car is being sorted.' },
+      { t: 'Table football', d: 'A quick match with friends between jobs.' },
+      { t: 'Space rental', d: 'A venue for meetings, shoots and gatherings.' },
+    ],
+    communityStory:
+      'JabPoint is an automotive club and a place to connect — not only a bay to leave your car.',
+    platBadge: 'Coming Soon',
+    platTitle: 'JabPoint Platform',
     platSub:
-      "Most of the garage process still runs on phone calls and paper. We're moving it into one system: customers see price and time upfront, partners get orders, stock and reporting automatically.",
-    platCta: 'Join the waitlist',
+      'A digital ecosystem connecting car owners, workshops, self-service garages, detailing studios, specialists and automotive companies across Europe.',
+    platCta: 'Learn More',
     platNote: 'Beta 2026',
     platFeatures: [
-      { t: 'Real-time booking', d: 'Free bay, mechanic and price — right on screen.' },
-      { t: 'Digital car passport', d: 'Full service history and receipts in one place.' },
-      { t: 'Transparent pricing', d: 'Quote before the work, changes only on approval.' },
-      { t: 'Partner dashboard', d: 'Orders, workload and parts in a single view.' },
+      { t: 'Online Booking', d: 'Book in a few clicks.' },
+      { t: 'Ratings', d: 'Ratings for masters and services.' },
+      { t: 'Marketplace', d: 'Parts, car care products, and independent specialist services.' },
+      { t: 'One App', d: 'Entire infrastructure in one application.' },
     ],
-    howTitle: 'Four steps to the bay',
+    howTitle: 'How It Works',
     steps: [
-      { n: '01', t: 'Get in touch', d: "Call or write — we'll tell you straight away if a bay is free." },
-      { n: '02', t: 'Pick a format', d: 'Do it yourself or let us do it. Either way, a clear price upfront.' },
-      { n: '03', t: 'Drive over', d: 'Lift, tools and light are ready. A mechanic nearby if you need one.' },
-      { n: '04', t: 'Drive on', d: 'A summary of the work and what to watch next time.' },
+      { n: '01', t: 'Choose Service', d: 'Select the service you need.' },
+      { n: '02', t: 'Book', d: 'Pick a convenient time.' },
+      { n: '03', t: 'Arrive', d: 'Visit JabPoint at Plaasi tn 2, Tallinn.' },
+      { n: '04', t: 'Enjoy', d: 'Car serviced; customer satisfied.' },
     ],
-    contactTitle: 'Come to the shop',
-    contactSub:
-      'We speak Estonian, English and Russian. Tell us the car and the job — we answer fast.',
+    partnersTitle: 'Partners & Franchise',
+    partnersSub: 'Workplaces for masters, a stage for brands, and one model built to expand.',
+    partnerPillars: [
+      {
+        t: 'For masters',
+        d: 'Workplaces for independent specialists — PDR, electricians, diagnosticians.',
+      },
+      {
+        t: 'For brands',
+        d: 'A marketing venue for manufacturers: advertising, video production and events.',
+      },
+      {
+        t: 'Franchise',
+        d: 'One brand, one booking system, one app, one client base and shared quality standards.',
+      },
+    ],
+    partnersGeoLabel: 'Expansion geography',
+    partnersGeo: 'Tallinn → Estonia → Latvia → Lithuania → Poland → Finland → Spain → Europe',
+    partnersCta: 'Talk partnership',
+    contactTitle: "Let's Talk",
+    contactSub: "Need help with your car? We're here for you.",
     contactLabels: {
       phone: 'Phone',
       email: 'E-mail',
@@ -232,8 +336,9 @@ export const dict: Record<LangCode, Dictionary> = {
       hours: 'Open',
     },
     mapTitle: 'JabPoint Tallinn',
-    mapSub: 'Self-service bays, maintenance and diagnostics under one roof.',
-    footer: 'Self-service car garage',
+    mapSub: 'Free parking · 24/7 · Lounge · Online booking',
+    openInMaps: 'Open in Google Maps',
+    footer: 'Modern automotive ecosystem',
     socialLabel: 'Social media',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
@@ -241,80 +346,122 @@ export const dict: Record<LangCode, Dictionary> = {
       home: 'Home',
       services: 'Services',
       platform: 'Platform',
-      how: 'Steps',
-      contact: 'Contact',
+      community: 'Community',
+      contact: 'Contacts',
     },
     callUs: 'Call us',
+    fabBook: 'Book online',
+    whatsapp: 'WhatsApp',
+    telegram: 'Telegram',
+    quickContactsLabel: 'Quick contact',
   },
 
   ru: {
+    seoTitle: 'JabPoint Tallinn — гараж самообслуживания, автосервис и детейлинг',
+    seoDescription:
+      'JabPoint — современная автомобильная экосистема в Таллинне (Plaasi tn 2): самообслуживание, профессиональный сервис, детейлинг, шиномонтаж и маркетплейс в одном месте. 24/7.',
     navServices: 'Услуги',
     navPlatform: 'Платформа',
+    navCommunity: 'Сообщество',
     navHow: 'Как это работает',
+    navPartners: 'Партнёрам',
     navContact: 'Контакты',
     navCta: 'Записаться',
     themeLabel: 'Сменить тему',
     themeDark: 'ТЁМНАЯ',
     themeLight: 'СВЕТЛАЯ',
-    heroBadge: 'Самообслуживание · Таллинн',
-    heroTitle1: 'Автосервис,',
-    heroTitle2: 'который уходит в цифру',
+    heroBadge: 'Таллинн · Plaasi tn 2',
+    heroTitle1: 'Всё для вашего авто',
+    heroTitle2: 'в одном месте',
     heroSub:
-      'JabPoint — автосервис самообслуживания в Таллинне. Мы строим платформу, которая переводит запись, диагностику и расчёт стоимости в цифру — и для клиентов, и для партнёров. А пока — приезжайте: подъёмник и инструмент ваши, или доверьте работу нашим мастерам.',
+      'JabPoint — современная автомобильная экосистема: самообслуживание, профессиональный сервис, детейлинг, шиномонтаж и автомобильный маркетплейс на одной платформе.',
     heroCta1: 'Записаться',
-    heroCta2: 'О платформе',
-    heroImgTag: 'Боксы самообслуживания',
+    heroCta2: 'Наши услуги',
+    heroImgTag: 'Modern Automotive Space',
     stats: [
-      { k: '24/7', v: 'Запись — скоро' },
-      { k: '6', v: 'Боксов и подъёмников' },
-      { k: '3', v: 'Языка в сервисе' },
+      { k: '5', v: 'Подъёмников' },
+      { k: '2', v: 'Детейлинг-бокса' },
+      { k: '24/7', v: 'Запись доступна' },
     ],
-    svcTitle: 'Что мы делаем сегодня',
-    svcSub: 'Четыре услуги, доступные прямо сейчас — без очередей и неожиданных счетов.',
+    svcTitle: 'Наши услуги',
+    svcSub: 'Всё, что связано с автомобилем — в одном месте.',
     services: [
       {
         n: 'S1',
-        t: 'Самообслуживание',
-        d: 'Аренда подъёмника и инструмента почасово. Масло, тормоза, шины — делаете сами, мастер рядом.',
+        t: 'Гараж самообслуживания',
+        d: 'Подъёмники, профессиональный и специализированный инструмент, компрессоры и расходники для самостоятельного обслуживания.',
       },
       {
         n: 'S2',
-        t: 'Обслуживание и ремонт',
-        d: 'Плановое ТО, диагностика и ремонт нашими мастерами. Понятная смета до начала работ.',
+        t: 'Автосервис',
+        d: 'Ремонт и ТО от профессиональных мастеров.',
       },
       {
         n: 'S3',
-        t: 'Консультация',
-        d: 'Техническая консультация: что не так, что срочно, а что может подождать.',
+        t: 'Детейлинг',
+        d: 'Химчистка, полировка, защитные покрытия, полный уход за кузовом и салоном.',
       },
       {
         n: 'S4',
-        t: 'Автоподбор',
-        d: 'Поможем выбрать автомобиль с пробегом и проверим его до покупки — технически и по истории.',
+        t: 'Другие услуги',
+        d: 'Шиномонтаж, подбор и заказ запчастей, диагностика, PDR, тонировка, помощь при покупке и продаже авто (проверка, предпродажная подготовка, комиссия, выкуп).',
+      },
+      {
+        n: 'S5',
+        t: 'Детейлинг самообслуживания',
+        d: 'Самостоятельная мойка, профессиональная химия, кисточки, щётки, моющие и обычные пылесосы.',
       },
     ],
-    platBadge: 'В разработке',
-    platTitle: 'Цифровая платформа для автосервиса',
+    communityTitle: 'Атмосфера и сообщество',
+    communitySub: 'Больше, чем сервис — автомобильный клуб для встреч, обзоров и событий.',
+    communityHighlights: [
+      { t: 'Лаунж', d: 'Зона отдыха — подождать или просто побыть.' },
+      { t: 'PlayStation 5', d: 'Игровая зона, пока готовят авто.' },
+      { t: 'Настольный футбол', d: 'Быстрый матч с друзьями между делами.' },
+      { t: 'Аренда пространства', d: 'Площадка для встреч, съёмок и мероприятий.' },
+    ],
+    communityStory:
+      'JabPoint — это автомобильный клуб и место для общения, а не только бокс, куда оставляют машину.',
+    platBadge: 'Скоро',
+    platTitle: 'JabPoint Platform',
     platSub:
-      'Большая часть работы сервиса до сих пор идёт через звонки и бумагу. Мы переносим её в одну систему: клиент заранее видит цену и время, партнёр получает заказы, склад и отчётность автоматически.',
-    platCta: 'В лист ожидания',
+      'Цифровая экосистема, объединяющая автовладельцев, сервисы, гаражи самообслуживания, детейлинг-студии, специалистов и автокомпании по всей Европе.',
+    platCta: 'Узнать больше',
     platNote: 'Бета 2026',
     platFeatures: [
-      { t: 'Запись в реальном времени', d: 'Свободный бокс, мастер и цена — сразу на экране.' },
-      { t: 'Цифровой паспорт авто', d: 'Вся история обслуживания и чеки в одном месте.' },
-      { t: 'Прозрачные цены', d: 'Смета до работ, изменения — только с подтверждением.' },
-      { t: 'Кабинет партнёра', d: 'Заказы, загрузка и запчасти в одном окне.' },
+      { t: 'Онлайн-запись', d: 'Запись в пару кликов.' },
+      { t: 'Рейтинги', d: 'Рейтинги мастеров и сервисов.' },
+      { t: 'Маркетплейс', d: 'Запчасти, автохимия и услуги независимых специалистов.' },
+      { t: 'Одно приложение', d: 'Вся инфраструктура в одном приложении.' },
     ],
-    howTitle: 'Четыре шага до бокса',
+    howTitle: 'Как это работает',
     steps: [
-      { n: '01', t: 'Свяжитесь с нами', d: 'Позвоните или напишите — сразу скажем, свободен ли бокс.' },
-      { n: '02', t: 'Выберите формат', d: 'Делаете сами или делаем мы. В обоих случаях цена известна заранее.' },
-      { n: '03', t: 'Приезжайте', d: 'Подъёмник, инструмент и свет готовы. Мастер рядом, если нужен.' },
-      { n: '04', t: 'Едьте дальше', d: 'Итог работ и рекомендации на следующий раз.' },
+      { n: '01', t: 'Выберите услугу', d: 'Выберите нужную услугу.' },
+      { n: '02', t: 'Запишитесь', d: 'Выберите удобное время.' },
+      { n: '03', t: 'Приезжайте', d: 'Посетите JabPoint по адресу Plaasi tn 2, Tallinn.' },
+      { n: '04', t: 'Наслаждайтесь', d: 'Автомобиль обслужен, клиент доволен.' },
     ],
-    contactTitle: 'Приезжайте в сервис',
-    contactSub:
-      'Говорим на эстонском, английском и русском. Напишите, какая машина и что нужно — ответим быстро.',
+    partnersTitle: 'Партнёрам и франшизе',
+    partnersSub: 'Рабочие места мастерам, площадка брендам и единая модель для роста.',
+    partnerPillars: [
+      {
+        t: 'Мастерам',
+        d: 'Рабочие места независимым специалистам — PDR, электрики, диагносты.',
+      },
+      {
+        t: 'Брендам',
+        d: 'Маркетинговая площадка для производителей: реклама, видеосъёмка и мероприятия.',
+      },
+      {
+        t: 'Франшиза',
+        d: 'Единый бренд, единая система бронирования, единое приложение, единая база клиентов и стандарты качества.',
+      },
+    ],
+    partnersGeoLabel: 'География развития',
+    partnersGeo: 'Таллин → Эстония → Латвия → Литва → Польша → Финляндия → Испания → Европа',
+    partnersCta: 'Написать о партнёрстве',
+    contactTitle: 'Давайте поговорим',
+    contactSub: 'Нужна помощь с авто? Мы на связи.',
     contactLabels: {
       phone: 'Телефон',
       email: 'Почта',
@@ -322,8 +469,9 @@ export const dict: Record<LangCode, Dictionary> = {
       hours: 'Часы',
     },
     mapTitle: 'JabPoint Tallinn',
-    mapSub: 'Боксы самообслуживания, ТО и диагностика под одной крышей.',
-    footer: 'Автосервис самообслуживания',
+    mapSub: 'Бесплатная парковка · 24/7 · Лаунж · Онлайн-запись',
+    openInMaps: 'Открыть в Google Maps',
+    footer: 'Современная автомобильная экосистема',
     socialLabel: 'Соцсети',
     menuOpen: 'Открыть меню',
     menuClose: 'Закрыть меню',
@@ -331,9 +479,13 @@ export const dict: Record<LangCode, Dictionary> = {
       home: 'Главная',
       services: 'Услуги',
       platform: 'Платформа',
-      how: 'Шаги',
-      contact: 'Контакт',
+      community: 'Клуб',
+      contact: 'Контакты',
     },
     callUs: 'Позвонить',
+    fabBook: 'Записаться онлайн',
+    whatsapp: 'WhatsApp',
+    telegram: 'Telegram',
+    quickContactsLabel: 'Быстрый контакт',
   },
 }

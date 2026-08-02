@@ -7,7 +7,7 @@ export function Header() {
   const links = [
     { href: '#services', label: t.navServices },
     { href: '#platform', label: t.navPlatform },
-    { href: '#how', label: t.navHow },
+    { href: '#community', label: t.navCommunity },
     { href: '#contact', label: t.navContact },
   ]
 
@@ -57,7 +57,12 @@ export function Header() {
             </span>
           </button>
 
-          <a className="btn-cta" href="#contact">
+          <a
+            className="btn-cta"
+            href={site.booking.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t.navCta}
           </a>
         </div>

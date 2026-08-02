@@ -6,10 +6,12 @@ import { MobileTopBar } from './components/MobileTopBar'
 import { MobileTabBar } from './components/MobileTabBar'
 import { MobileHero } from './components/MobileHero'
 import { MobileServices } from './components/MobileServices'
+import { MobileCommunity } from './components/MobileCommunity'
 import { MobilePlatform } from './components/MobilePlatform'
 import { MobileHow } from './components/MobileHow'
+import { MobilePartners } from './components/MobilePartners'
 import { MobileContact } from './components/MobileContact'
-import { IconPhone } from './components/icons'
+import { IconBook } from './components/icons'
 import './mobile.css'
 
 /** Native-feel mobile shell — separate layout & components from desktop. */
@@ -29,14 +31,22 @@ export default function MobileApp() {
       <main className="m-main">
         <MobileHero />
         <MobileServices />
+        <MobileCommunity />
         <MobilePlatform />
         <MobileHow />
+        <MobilePartners />
         <MobileContact />
       </main>
 
-      <a className="m-fab" href={site.contact.phone.href} aria-label={t.callUs}>
-        <IconPhone className="m-fab__icon" />
-        <span>{t.callUs}</span>
+      <a
+        className="m-fab"
+        href={site.booking.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t.fabBook}
+      >
+        <IconBook className="m-fab__icon" />
+        <span>{t.fabBook}</span>
       </a>
 
       <MobileTabBar activeId={activeId} onNavigate={goToSection} />

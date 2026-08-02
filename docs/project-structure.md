@@ -70,4 +70,4 @@ Vite emits separately chunked assets for desktop and mobile:
 - `MobileApp-*.js` / `MobileApp-*.css`
 - shared `index-*.js` / `tokens` CSS
 
-`base: './'` in `vite.config.ts` keeps relative asset URLs suitable for GitHub Pages project sites.
+`base: '/'` in `vite.config.ts` is required for the custom domain `jabpoint.ee` (assets at domain root).

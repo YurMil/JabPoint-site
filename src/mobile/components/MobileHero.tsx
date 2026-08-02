@@ -24,10 +24,15 @@ export function MobileHero() {
         <p className="m-hero__sub">{t.heroSub}</p>
 
         <div className="m-hero__actions">
-          <button type="button" className="m-btn m-btn--primary" onClick={() => scrollToSection('contact')}>
+          <a
+            className="m-btn m-btn--primary"
+            href={site.booking.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t.heroCta1}
-          </button>
-          <button type="button" className="m-btn m-btn--ghost" onClick={() => scrollToSection('platform')}>
+          </a>
+          <button type="button" className="m-btn m-btn--ghost" onClick={() => scrollToSection('services')}>
             {t.heroCta2}
           </button>
         </div>

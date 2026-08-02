@@ -17,13 +17,38 @@ Workflow: [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml)
 2. Repository **Settings → Pages → Source → GitHub Actions**.
 3. On push to `main` / `master`, the workflow runs `npm ci` → `npm run build` → deploys the `dist` artifact.
 
-### Base path
+### Base path & custom domain
 
-`vite.config.ts` uses `base: '/JabPoint-site/'` for the project Pages URL:
+Production site: **https://jabpoint.ee**
 
-`https://yurmil.github.io/JabPoint-site/`
+`vite.config.ts` uses `base: '/'` so assets resolve at the domain root.
 
-If you rename the repository, update `base` to match (`'/New-Repo-Name/'`).
+`public/CNAME` contains `jabpoint.ee` and is published with the build. Also set the same custom domain in GitHub → **Settings → Pages**.
+
+DNS at Zone.ee typically needs:
+
+| Type | Host | Value |
+|------|------|--------|
+| A | `@` | GitHub Pages IPs (see [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)) |
+| CNAME | `www` | `yurmil.github.io` (optional www) |
+
+After DNS propagates, turn on **Enforce HTTPS** in Pages settings.
+
+Legacy project path `https://yurmil.github.io/JabPoint-site/` may redirect or still work depending on Pages settings; canonical SEO points to `https://jabpoint.ee/`.
+
+## SEO & Open Graph
+
+Crawl-facing defaults live in [`index.html`](../index.html) (title, description, keywords, canonical, Open Graph, Twitter Card, JSON-LD).
+
+Runtime language switches update title / description / `og:locale` via [`src/hooks/useDocumentMeta.ts`](../src/hooks/useDocumentMeta.ts) and copy in `i18n.ts` (`seoTitle`, `seoDescription`).
+
+| Setting | Where |
+|---------|--------|
+| Production origin | `site.siteUrl` → `https://jabpoint.ee` in [`src/data/site.ts`](../src/data/site.ts) |
+| Shared SEO helpers | [`src/data/seo.ts`](../src/data/seo.ts) |
+| `robots.txt` / `sitemap.xml` / `CNAME` | [`public/`](../public/) |
+
+If the domain changes, update `site.siteUrl`, absolute URLs in `index.html`, and `public/robots.txt` + `public/sitemap.xml` + `public/CNAME`.
 
 ## Manual publish
 
@@ -31,17 +56,18 @@ If you rename the repository, update `base` to match (`'/New-Repo-Name/'`).
 npm run deploy
 ```
 
-Uses `gh-pages` to push `dist` to the `gh-pages` branch. Requires GitHub push credentials.
+Uses `gh-pages` to push `dist` to the `gh-pages` branch. Requires GitHub push credentials. Prefer the GitHub Actions workflow above when using custom domain + Pages.
 
 ## Assets checklist
 
 Before going live, confirm in `src/data/site.ts`:
 
-- [ ] Real phone number and `tel:` href
-- [ ] Real email and `mailto:` href
-- [ ] Correct address and hours per language
-- [ ] Final images in `public/img/`
-- [ ] Brand/year
+- [x] Real phone number and `tel:` href
+- [x] Real email and `mailto:` href
+- [x] Correct address and hours per language
+- [ ] Final lounge / hero images in `public/img/` (OG currently uses `building.png`)
+- [x] Brand/year
+- [x] SEO / Open Graph tags in `index.html`
 
 ## Environment notes
 

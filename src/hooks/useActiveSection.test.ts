@@ -9,8 +9,8 @@ describe('resolveActiveSection', () => {
   const sections = [
     { id: 'top', top: 0 },
     { id: 'services', top: 500 },
+    { id: 'community', top: 750 },
     { id: 'platform', top: 1000 },
-    { id: 'how', top: 1500 },
     { id: 'contact', top: 2000 },
   ]
 
@@ -20,9 +20,9 @@ describe('resolveActiveSection', () => {
 
   it('selects the last section whose top crossed the marker', () => {
     expect(resolveActiveSection(sections, 500)).toBe('services')
-    expect(resolveActiveSection(sections, 999)).toBe('services')
+    expect(resolveActiveSection(sections, 749)).toBe('services')
+    expect(resolveActiveSection(sections, 750)).toBe('community')
     expect(resolveActiveSection(sections, 1000)).toBe('platform')
-    expect(resolveActiveSection(sections, 1600)).toBe('how')
   })
 
   it('forces the last section near the document bottom', () => {

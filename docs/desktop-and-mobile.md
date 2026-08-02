@@ -10,8 +10,10 @@ The site maintains **two independent UI codebases**. `App` mounts exactly one of
 | Styles | `desktop.css` (lazy with shell) | `mobile.css` (lazy with shell) |
 | Navigation | Top sticky header + anchor links | Bottom tab bar + section scroll |
 | Hero | Two-column grid + float animation | Full-bleed media + stacked CTAs |
-| Services | 4-column / 2-column card grid | Horizontal snap carousel |
+| Services | Responsive card grid | Horizontal snap carousel |
+| Community | Image + highlight list | Visual strip + list |
 | How-it-works | Horizontal step row | Vertical timeline |
+| Partners | Three pillars + geography band | Stacked pillars + geo CTA |
 | Settings | Inline lang + theme controls | Compact ET/EN/RU chips + theme toggle in top bar |
 | Contact CTA | Header / section buttons | Sticky call FAB + large call row |
 | Safe areas | Not required | `env(safe-area-inset-*)` |
@@ -22,9 +24,11 @@ The site maintains **two independent UI codebases**. `App` mounts exactly one of
 |-----------|----------------|
 | `Header` | Brand, nav, language, theme, CTA |
 | `Hero` | `#top` — title, CTAs, stats, building image |
-| `Services` | `#services` — four service cards |
+| `Services` | `#services` — service cards |
+| `Community` | `#community` — lounge / club atmosphere |
 | `Platform` | `#platform` — product pitch + feature list |
 | `HowItWorks` | `#how` — four steps |
+| `Partners` | `#partners` — masters, brands, franchise + geography |
 | `Contact` | `#contact` — details + map-style panel |
 | `Footer` | Copyright + language legend |
 
@@ -36,8 +40,10 @@ The site maintains **two independent UI codebases**. `App` mounts exactly one of
 | `MobileTabBar` | Five-tab primary navigation with icons |
 | `MobileHero` | `#top` |
 | `MobileServices` | `#services` |
+| `MobileCommunity` | `#community` |
 | `MobilePlatform` | `#platform` |
 | `MobileHow` | `#how` |
+| `MobilePartners` | `#partners` |
 | `MobileContact` | `#contact` + inline footer |
 | `icons.tsx` | Inline SVG icons (no icon package) |
 
@@ -45,9 +51,11 @@ The site maintains **two independent UI codebases**. `App` mounts exactly one of
 
 Both shells use the same fragment IDs so deep links stay consistent:
 
-`top` · `services` · `platform` · `how` · `contact`
+`top` · `services` · `community` · `platform` · `how` · `partners` · `contact`
 
-Mobile tab highlighting is driven by `useActiveSection()` (`IntersectionObserver`). Programmatic navigation uses `scrollToSection(id)`.
+Primary nav / mobile tabs (TZ): Services · Platform · Community · Contacts  
+
+Mobile tab highlighting is driven by `useActiveSection()` over `SECTION_IDS` (`top`, `services`, `community`, `platform`, `contact`). Programmatic navigation uses `scrollToSection(id)`.
 
 ## Body class
 

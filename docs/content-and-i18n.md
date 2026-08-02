@@ -2,15 +2,18 @@
 
 All visitor-facing content is meant to be editable without hunting through UI components.
 
+> **Canonical Stage‑1 product copy and contact facts** are defined in [`docs/product/`](./product/README.md) (especially [technical assignment](./product/03-technical-assignment.md) and [gap analysis](./product/07-current-vs-target-gap.md)). Prefer those values when updating `site.ts` / `i18n.ts`.
+
 ## Where to edit
 
 | Change | File |
 |--------|------|
-| Phone, email, address, hours, brand name, year, image paths, default language, **social URLs** | [`src/data/site.ts`](../src/data/site.ts) |
-| All UI strings (ET / EN / RU), including mobile tab labels | [`src/data/i18n.ts`](../src/data/i18n.ts) |
+| Phone, email, address, hours, brand name, year, image paths, default language, **social URLs**, **siteUrl**, **booking**, **maps** | [`src/data/site.ts`](../src/data/site.ts) |
+| All UI strings (ET / EN / RU), including mobile tab labels and **seoTitle / seoDescription** | [`src/data/i18n.ts`](../src/data/i18n.ts) |
+| Crawl-facing SEO / Open Graph defaults | [`index.html`](../index.html) + [`src/data/seo.ts`](../src/data/seo.ts) |
 | Image files | [`public/img/`](../public/img/) |
 
-Social icons (Instagram, YouTube, Facebook, LinkedIn) render from `site.social`. Replace `href` values with real profiles; set `href: ""` to hide a network.
+Social icons (Instagram, TikTok, YouTube, Facebook, LinkedIn) render from `site.social`. Replace `href` values with real profiles; set `href: ""` to hide a network.
 
 ## `site.ts`
 
@@ -19,6 +22,7 @@ Social icons (Instagram, YouTube, Facebook, LinkedIn) render from `site.social`.
 ```ts
 site.brand          // "JabPoint"
 site.location       // "Tallinn"
+site.siteUrl        // production origin for canonical / OG
 site.year           // footer copyright year
 site.defaultLang    // "et" | "en" | "ru"
 site.langs          // switcher options { code, label }
@@ -66,8 +70,9 @@ Replace files under `public/img/` or change the path strings. No import required
 
 Each language object covers:
 
+- `seoTitle` / `seoDescription` (document head + Open Graph when that language is active)
 - Navigation and CTAs
-- Hero, services, platform, how-it-works, contact copy
+- Hero, services, community, platform, how-it-works, partners, contact copy
 - Theme labels
 - Mobile `tabs.*` short labels
 - `callUs` (FAB / call button)

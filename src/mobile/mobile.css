@@ -347,6 +347,150 @@
   color: var(--muted);
 }
 
+/* ── Community ── */
+.m-community-visual {
+  position: relative;
+  margin-top: 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.m-community-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.m-community-visual__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.m-community-visual__tag {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+
+.m-community-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.m-community-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.m-community-item__mark {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--red);
+  margin-top: 7px;
+  flex-shrink: 0;
+  transform: rotate(45deg);
+}
+
+.m-community-item__t {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.m-community-item__d {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.m-community-story {
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg-soft);
+}
+
+/* ── Partners ── */
+.m-partners {
+  margin-top: 18px;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.m-partner {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.m-partner:last-child {
+  border-bottom: none;
+}
+
+.m-partner__n {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: var(--faint);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.m-partner__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 8px 0 6px;
+}
+
+.m-partner__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.m-partners-geo {
+  margin-top: 8px;
+  padding: 18px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  display: grid;
+  gap: 12px;
+}
+
+.m-partners-geo__label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.m-partners-geo__path {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
 /* ── Platform ── */
 .m-platform {
   position: relative;
@@ -643,7 +787,42 @@
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--line);
-  min-height: 200px;
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+}
+
+.m-map .location-map__frame {
+  width: 100%;
+  height: 240px;
+  border: 0;
+  display: block;
+}
+
+.m-map .location-map__caption {
+  padding: 14px 16px 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.m-map .location-map__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.m-map .location-map__sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 5px 0 0;
+  line-height: 1.45;
+}
+
+.m-map .location-map__open {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
 }
 
 .m-map img {
@@ -679,7 +858,17 @@
   line-height: 1.45;
 }
 
+.m-quick-contacts {
+  margin-top: 16px;
+}
+
+.m-quick-contacts .quick-contacts__btn {
+  flex: 1 1 calc(50% - 8px);
+  justify-content: center;
+}
+
 .m-footer {
+  display: block;
   margin: 28px 0 8px;
   font-size: 12.5px;
   color: var(--dim);
@@ -687,7 +876,7 @@
   line-height: 1.45;
 }
 
-/* ── FAB call button ── */
+/* ── FAB book online button ── */
 .m-fab {
   position: fixed;
   right: 16px;
