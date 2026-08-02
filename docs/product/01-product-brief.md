@@ -14,7 +14,7 @@ The **promo website** is Stage 1 of that vision: a brand presentation and busine
 | Repository | https://github.com/YurMil/JabPoint-site |
 | Primary site language (target) | English (EN) |
 | Launch location | Plaasi tn 2, Tallinn, Estonia |
-| Operating model | 24/7 |
+| Operating model | 10.00–21.00 (24/7 planned) |
 | Slogan (preferred) | *One Platform. Every Car Solution.* |
 | Slogan (alt) | *Everything Your Car Needs.* |
 
@@ -76,9 +76,9 @@ These values supersede placeholder data currently in `src/data/site.ts` once Sta
 | Fact | Canonical value |
 |------|-----------------|
 | Address | Plaasi tn 2, Tallinn |
-| Phone | +372 57919043 |
+| Phone | +372 5565 1117 |
 | Email | teamjabpoint@gmail.com |
-| Hours | 24/7 |
+| Hours | 10.00–21.00 (24/7 planned) |
 | Free parking | Yes |
 | Online booking | Available / coming as product capability (CTA + integration) |
 | Key facility stats | **5** vehicle lifts · **2** detailing bays · **24/7** booking |

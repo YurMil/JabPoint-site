@@ -118,7 +118,7 @@ Given I open Contacts
 Then the title is "Let's Talk"
 And the subtitle is "Need help with your car? We're here for you."
 And address shows Plaasi tn 2, Tallinn
-And amenities include free parking, 24/7, lounge, online booking
+And amenities include free parking, opening hours, lounge, online booking
 And an interactive Google Map shows the location
 ```
 
@@ -126,9 +126,9 @@ And an interactive Google Map shows the location
 
 ```gherkin
 Given I inspect visible contact details and tel/mailto links
-Then phone is +372 57919043 with a working tel: link
+Then phone is +372 5565 1117 with a working tel: link
 And email is teamjabpoint@gmail.com with a working mailto: link
-And opening hours communicate 24/7
+And opening hours communicate 10.00–21.00 with 24/7 stated as a future goal
 And values are driven from the shared data module (not hard-coded only in one shell)
 ```
 

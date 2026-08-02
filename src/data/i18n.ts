@@ -95,7 +95,7 @@ export const dict: Record<LangCode, Dictionary> = {
   et: {
     seoTitle: 'JabPoint Tallinn — iseteenindus, autoplatvorm ja detailing',
     seoDescription:
-      'JabPoint on kaasaegne autoplatvorm Tallinnas (Plaasi tn 2): iseteenindus, professionaalne töökoda, detailing, rehviteenus ja marketplace ühes kohas. 24/7.',
+      'JabPoint on kaasaegne autoplatvorm Tallinnas (Plaasi tn 2): iseteenindus, professionaalne töökoda, detailing, rehviteenus ja marketplace ühes kohas. Avatud 10.00–21.00.',
     navServices: 'Teenused',
     navPlatform: 'Platvorm',
     navCommunity: 'Kogukond',
@@ -207,7 +207,7 @@ export const dict: Record<LangCode, Dictionary> = {
       hours: 'Avatud',
     },
     mapTitle: 'JabPoint Tallinn',
-    mapSub: 'Tasuta parkimine · 24/7 · Lounge · Online-broneerimine',
+    mapSub: 'Tasuta parkimine · 10.00–21.00 · Lounge · Online-broneerimine',
     openInMaps: 'Ava Google Mapsis',
     footer: 'Kaasaegne autoökosüsteem',
     socialLabel: 'Sotsiaalmeedia',
@@ -230,7 +230,7 @@ export const dict: Record<LangCode, Dictionary> = {
   en: {
     seoTitle: 'JabPoint Tallinn — Self-service, automotive platform & detailing',
     seoDescription:
-      'JabPoint is a modern automotive platform in Tallinn (Plaasi tn 2): self-service, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
+      'JabPoint is a modern automotive platform in Tallinn (Plaasi tn 2): self-service, professional workshop, detailing, tyre service and marketplace in one place. Open 10.00–21.00.',
     navServices: 'Services',
     navPlatform: 'Platform',
     navCommunity: 'Community',
@@ -342,7 +342,7 @@ export const dict: Record<LangCode, Dictionary> = {
       hours: 'Open',
     },
     mapTitle: 'JabPoint Tallinn',
-    mapSub: 'Free parking · 24/7 · Lounge · Online booking',
+    mapSub: 'Free parking · 10.00–21.00 · Lounge · Online booking',
     openInMaps: 'Open in Google Maps',
     footer: 'Modern automotive ecosystem',
     socialLabel: 'Social media',
@@ -365,7 +365,7 @@ export const dict: Record<LangCode, Dictionary> = {
   ru: {
     seoTitle: 'JabPoint Tallinn — сервис самообслуживания, автомобильная платформа и детейлинг',
     seoDescription:
-      'JabPoint — современная автомобильная платформа в Таллинне (Plaasi tn 2): самообслуживание, профессиональный сервис, детейлинг, шиномонтаж и маркетплейс в одном месте. 24/7.',
+      'JabPoint — современная автомобильная платформа в Таллинне (Plaasi tn 2): самообслуживание, профессиональный сервис, детейлинг, шиномонтаж и маркетплейс в одном месте. Открыто 10.00–21.00.',
     navServices: 'Услуги',
     navPlatform: 'Платформа',
     navCommunity: 'Сообщество',
@@ -477,7 +477,7 @@ export const dict: Record<LangCode, Dictionary> = {
       hours: 'Часы',
     },
     mapTitle: 'JabPoint Tallinn',
-    mapSub: 'Бесплатная парковка · 24/7 · Лаунж · Онлайн-запись',
+    mapSub: 'Бесплатная парковка · 10.00–21.00 · Лаунж · Онлайн-запись',
     openInMaps: 'Открыть в Google Maps',
     footer: 'Современная автомобильная экосистема',
     socialLabel: 'Соцсети',

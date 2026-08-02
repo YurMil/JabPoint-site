@@ -97,7 +97,7 @@ Priority: **P0** = release blocker · **P1** = should ship in Stage 1 · **P2** 
 | FR-07 | How It Works: 01 Choose Service → 02 Book → 03 Arrive (Plaasi tn 2) → 04 Enjoy | P1 | TZ §4.7 | AC-HOW-01 |
 | FR-08 | Partners & Franchise: masters workplaces; brand marketing venue; franchise model; geography Tallinn → … → Europe | P1 | TZ §4.8 | AC-PART-01 |
 | FR-09 | Contacts “Let's Talk” with address, amenities, phone, email, Google Maps, social links | P0 | TZ §4.9 | AC-CONTACT-01 |
-| FR-10 | Canonical contacts in data layer: phone +372 57919043; email teamjabpoint@gmail.com; address Plaasi tn 2, Tallinn; hours 24/7 | P0 | TZ §1, §4.9 | AC-DATA-01 |
+| FR-10 | Canonical contacts in data layer: phone +372 5565 1117; email teamjabpoint@gmail.com; address Plaasi tn 2, Tallinn; hours 10.00–21.00 (24/7 planned) | P0 | TZ §1, §4.9 | AC-DATA-01 |
 | FR-11 | Social: Instagram jabpoint_ou, TikTok @jabpoint, Facebook, Telegram | P1 | TZ §4.9 | AC-SOCIAL-01 |
 | FR-12 | Quick contact actions: WhatsApp and/or Telegram and phone | P1 | TZ §5.3 | AC-CHAT-01 |
 | FR-13 | Booking module or deep-link to external booking provider from Book Now | P0 | TZ §5.3 | AC-BOOK-01 |
@@ -186,6 +186,6 @@ Tallinn → Estonia → Latvia → Lithuania → Poland → Finland → Spain �
 | OQ-05 | Keep YouTube / LinkedIn if not in TZ? | Social list | Content sync | Client | **Done** — keep YouTube; **hide LinkedIn** |
 | OQ-06 | Is Detailing Self-Service a 5th card or nested under S3? | Services UI | Design | Product | Interim: shipped as **S5** |
 | OQ-07 | Nav: replace “How it works” with “Community” or keep both? | Header IA | Design | Product | **Done** — Community in primary nav; How stays on page |
-| OQ-08 | WhatsApp number — same as +372 57919043? | Quick contacts | Content sync | Client | **Done** — same number (`wa.me/37257919043`) |
+| OQ-08 | WhatsApp number — same as +372 5565 1117? | Quick contacts | Content sync | Client | **Done** — same number (`wa.me/37255651117`) |
 | OQ-09 | Franchise / team / philosophy deep pages or single-page sections only? | IA | Roadmap | Client | Open |
 | OQ-10 | Final hero video file and photo set delivery date? | Hero polish | Production | Client | **Deferred** — later |
