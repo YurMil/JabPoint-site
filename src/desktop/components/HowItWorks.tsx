@@ -6,7 +6,7 @@ export function HowItWorks() {
   return (
     <section id="how" className="section section--tight">
       <div className="wrap">
-        <div className="section-kicker">02 — {t.navHow}</div>
+        <div className="section-kicker">03 — {t.navHow}</div>
         <h2 className="section-title how-title">{t.howTitle}</h2>
         <div className="steps">
           {t.steps.map((s) => (

@@ -1,8 +1,8 @@
 import { useApp } from '../../hooks/useApp'
 import {
+  IconCommunity,
   IconContact,
   IconHome,
-  IconHow,
   IconPlatform,
   IconServices,
 } from './icons'
@@ -25,7 +25,7 @@ export function MobileTabBar({ activeId, onNavigate }: Props) {
     { id: 'top', label: t.tabs.home, Icon: IconHome },
     { id: 'services', label: t.tabs.services, Icon: IconServices },
     { id: 'platform', label: t.tabs.platform, Icon: IconPlatform },
-    { id: 'how', label: t.tabs.how, Icon: IconHow },
+    { id: 'community', label: t.tabs.community, Icon: IconCommunity },
     { id: 'contact', label: t.tabs.contact, Icon: IconContact },
   ]
 

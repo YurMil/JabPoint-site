@@ -2,8 +2,10 @@ import { useApp } from '../hooks/useApp'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Services } from './components/Services'
+import { Community } from './components/Community'
 import { Platform } from './components/Platform'
 import { HowItWorks } from './components/HowItWorks'
+import { Partners } from './components/Partners'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import './desktop.css'
@@ -19,8 +21,10 @@ export default function DesktopApp() {
       <main>
         <Hero />
         <Services />
+        <Community />
         <Platform />
         <HowItWorks />
+        <Partners />
         <Contact />
       </main>
       <Footer />

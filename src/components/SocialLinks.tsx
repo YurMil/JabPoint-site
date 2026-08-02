@@ -4,11 +4,15 @@ import {
   IconFacebook,
   IconInstagram,
   IconLinkedIn,
+  IconTelegram,
+  IconTikTok,
   IconYouTube,
 } from './socialIcons'
 
 const ICONS: Record<SocialNetwork, ComponentType<{ className?: string }>> = {
   instagram: IconInstagram,
+  tiktok: IconTikTok,
+  telegram: IconTelegram,
   youtube: IconYouTube,
   facebook: IconFacebook,
   linkedin: IconLinkedIn,

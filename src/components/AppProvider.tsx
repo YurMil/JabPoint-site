@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { dict } from '../data/i18n'
 import { site, type LangCode, type ThemeMode } from '../data/site'
 import { AppContext } from '../hooks/useApp'
+import { useDocumentMeta } from '../hooks/useDocumentMeta'
 
 function readStoredLang(): LangCode {
   try {
@@ -39,7 +40,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!ready) return
-    document.documentElement.lang = lang
     try {
       localStorage.setItem(site.storage.lang, lang)
     } catch {
@@ -56,15 +56,18 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   }, [theme, ready])
 
+  const t = dict[lang]
+  useDocumentMeta(lang, t)
+
   const value = useMemo(
     () => ({
       lang,
       setLang: (code: LangCode) => setLangState(code),
       theme,
       toggleTheme: () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light')),
-      t: dict[lang],
+      t,
     }),
-    [lang, theme],
+    [lang, theme, t],
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

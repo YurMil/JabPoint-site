@@ -1,6 +1,16 @@
-# JabPoint Tallinn — Code Documentation
+# JabPoint Tallinn — Documentation
 
-Structural documentation for the JabPoint Tallinn marketing site codebase.
+## Product specification (what to build)
+
+Official Stage‑1 product pack from the client technical assignment (English):
+
+**[`docs/product/`](./product/README.md)** — brief, requirements, technical assignment, acceptance criteria, roadmap, traceability, and current-vs-target gap analysis.
+
+Start here before content or feature work: [Product README](./product/README.md) → [Gap analysis](./product/07-current-vs-target-gap.md).
+
+## Code documentation (how it is built)
+
+Structural documentation for the marketing site codebase.
 
 | Document | Description |
 |----------|-------------|
@@ -15,4 +25,4 @@ Structural documentation for the JabPoint Tallinn marketing site codebase.
 
 **Stack:** React 19 · TypeScript · Vite 7 · Vitest  
 
-**Product:** Static multilingual business-card site for JabPoint (self-service car garage, Tallinn).
+**Product:** Static multilingual promo / business-card site for JabPoint (automotive ecosystem hub, Tallinn) — Stage 1 of a longer platform roadmap.

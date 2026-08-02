@@ -51,6 +51,20 @@ export function IconHow({ className }: IconProps) {
   )
 }
 
+export function IconCommunity({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M16 11a3.5 3.5 0 1 0-3.4-4.2M8 13a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM3.5 20a4.5 4.5 0 0 1 9 0M13 16.5a4.5 4.5 0 0 1 7.5 3.5"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function IconContact({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -75,6 +89,16 @@ export function IconPhone({ className }: IconProps) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  )
+}
+
+export function IconBook({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="3.5" y="4.5" width="17" height="16" rx="2.5" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 3.5v3M16 3.5v3M3.5 10.5h17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M9 14.5h6M9 17.5h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   )
 }

@@ -5,7 +5,7 @@ export function MobileHow() {
 
   return (
     <section id="how" className="m-section">
-      <div className="m-section__kicker">02 — {t.navHow}</div>
+      <div className="m-section__kicker">03 — {t.navHow}</div>
       <h2 className="m-section__title">{t.howTitle}</h2>
 
       <ol className="m-steps">

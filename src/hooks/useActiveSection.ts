@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export const SECTION_IDS = ['top', 'services', 'platform', 'how', 'contact'] as const
+export const SECTION_IDS = ['top', 'services', 'community', 'platform', 'contact'] as const
 export type SectionId = (typeof SECTION_IDS)[number]
 
 export type SectionOffset = { id: string; top: number }

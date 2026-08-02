@@ -12,6 +12,39 @@ export function IconInstagram({ className }: IconProps) {
   )
 }
 
+export function IconTikTok({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M14.2 3.2c.5 2.4 2.1 4.1 4.5 4.5v2.6c-1.6.1-3-.4-4.2-1.3v5.7c0 3.3-2.5 5.7-5.7 5.7S3 17.9 3 14.7s2.6-5.7 5.8-5.7c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.1-.9-.1-1.7 0-3 1.4-3 3.1s1.3 3 3 3 2.9-1.3 2.9-3V3.2h2.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IconTelegram({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M21.5 4.3 3.9 11c-1.2.5-1.2 1.1-.2 1.4l4.5 1.4 1.7 5.3c.2.7.4.9 1 .9.6 0 .9-.3 1.2-.6l2.6-2.5 5.4 4c1 .5 1.7.2 1.9-1L22.9 5.5c.3-1.2-.5-1.8-1.4-1.2Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IconWhatsApp({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M12 2.5A9.5 9.5 0 0 0 4.3 16.7L3 21l4.4-1.2A9.5 9.5 0 1 0 12 2.5Zm5.3 13.5c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.4-1-4-3.5-4.1-3.7-.2-.2-1.2-1.6-1.2-3s.8-2.1 1-2.3c.3-.2.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.1.3.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.6.3.1.2.1.9-.1 1.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export function IconYouTube({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>

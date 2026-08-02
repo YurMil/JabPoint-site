@@ -19,10 +19,15 @@ export function Hero() {
           </h1>
           <p className="hero__sub">{t.heroSub}</p>
           <div className="hero__actions">
-            <a className="btn-primary" href="#contact">
+            <a
+              className="btn-primary"
+              href={site.booking.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t.heroCta1} →
             </a>
-            <a className="btn-ghost" href="#platform">
+            <a className="btn-ghost" href="#services">
               {t.heroCta2}
             </a>
           </div>

@@ -17,7 +17,12 @@ npm test
 
 ## Documentation (English)
 
-Full structured code docs live in **[`docs/`](docs/README.md)**:
+**Product / client requirements** (Stage 1 TZ, for upcoming development):
+
+- **[`docs/product/`](docs/product/README.md)** — product brief, requirements IDs, technical assignment, acceptance criteria, roadmap, traceability, gap analysis
+- Original client TZ (RU archive): [`docs/product/sources/tz_jabpoint_site.ru.md`](docs/product/sources/tz_jabpoint_site.ru.md)
+
+**Code docs** live in **[`docs/`](docs/README.md)**:
 
 - [Architecture](docs/architecture.md)
 - [Project structure](docs/project-structure.md)
@@ -52,15 +57,19 @@ src/
 
 ## GitHub Pages
 
-Site URL after deploy: **https://yurmil.github.io/JabPoint-site/**
+Production domain: **https://jabpoint.ee** (custom domain; repo still deploys via GitHub Pages).
+
+Fallback / Pages URL: https://yurmil.github.io/JabPoint-site/
 
 1. Push to GitHub (`main`).
 2. **Settings → Pages → Source → GitHub Actions**.
-3. Workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) deploys `dist` on push to `main`.
+3. **Settings → Pages → Custom domain** → `jabpoint.ee` (and enable HTTPS).
+4. Workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) deploys `dist` on push to `main`.
 
 Or: `npm run deploy`.
 
-`vite.config.ts` → `base: '/JabPoint-site/'` (must match the repo name).
+`vite.config.ts` → `base: '/'` (required for apex custom domain).  
+`public/CNAME` → `jabpoint.ee`.
 
 ## Prototype
 

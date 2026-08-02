@@ -1,12 +1,11 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
-// For GitHub Pages project sites set base to '/your-repo-name/'
-// For user sites (username.github.io) or custom domain use '/'
+// For GitHub Pages + custom domain (jabpoint.ee) use '/'.
+// Project-path only (username.github.io/JabPoint-site/) would need '/JabPoint-site/'.
 export default defineConfig({
   plugins: [react()],
-  // Project site: https://yurmil.github.io/JabPoint-site/
-  base: '/JabPoint-site/',
+  base: '/',
   test: {
     globals: true,
     environment: 'jsdom',

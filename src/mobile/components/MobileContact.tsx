@@ -1,3 +1,5 @@
+import { LocationMap } from '../../components/LocationMap'
+import { QuickContacts } from '../../components/QuickContacts'
 import { SocialLinks } from '../../components/SocialLinks'
 import { site } from '../../data/site'
 import { useApp } from '../../hooks/useApp'
@@ -5,41 +7,50 @@ import { IconChevron, IconPhone } from './icons'
 
 export function MobileContact() {
   const { t, lang } = useApp()
-  const { contact, images, brand, location, year } = site
+  const { contact, brand, location, year } = site
 
   const rows = [
     {
       label: t.contactLabels.phone,
       value: contact.phone.value,
-      href: contact.phone.href,
+      href: contact.phone.href as string | undefined,
+      external: false,
     },
     {
       label: t.contactLabels.email,
       value: contact.email.value,
-      href: contact.email.href,
+      href: contact.email.href as string | undefined,
+      external: false,
     },
     {
       label: t.contactLabels.address,
       value: contact.address[lang],
-      href: undefined,
+      href: site.maps.openUrl as string | undefined,
+      external: true,
     },
     {
       label: t.contactLabels.hours,
       value: contact.hours[lang],
-      href: undefined,
+      href: undefined as string | undefined,
+      external: false,
     },
   ]
 
   return (
     <section id="contact" className="m-section">
-      <div className="m-section__kicker">03 — {t.navContact}</div>
+      <div className="m-section__kicker">05 — {t.navContact}</div>
       <h2 className="m-section__title">{t.contactTitle}</h2>
       <p className="m-section__sub">{t.contactSub}</p>
 
       <div className="m-contact-list">
         {rows.map((row) =>
           row.href ? (
-            <a key={row.label} className="m-contact-row" href={row.href}>
+            <a
+              key={row.label}
+              className="m-contact-row"
+              href={row.href}
+              {...(row.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
               <div>
                 <div className="m-contact-row__label">{row.label}</div>
                 <div className="m-contact-row__value">{row.value}</div>
@@ -57,6 +68,8 @@ export function MobileContact() {
         )}
       </div>
 
+      <QuickContacts className="m-quick-contacts" />
+
       <a className="m-call" href={contact.phone.href}>
         <IconPhone className="m-call__icon" />
         <span>
@@ -70,18 +83,11 @@ export function MobileContact() {
         <SocialLinks label={t.socialLabel} />
       </div>
 
-      <div className="m-map">
-        <img src={images.building} alt="" />
-        <div className="m-map__scrim" aria-hidden />
-        <div className="m-map__caption">
-          <div className="m-map__title">{t.mapTitle || `${brand} ${location}`}</div>
-          <div className="m-map__sub">{t.mapSub}</div>
-        </div>
-      </div>
+      <LocationMap className="m-map" />
 
-      <p className="m-footer">
+      <footer className="m-footer">
         © {year} {brand} {location} — {t.footer}
-      </p>
+      </footer>
     </section>
   )
 }
