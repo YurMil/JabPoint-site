@@ -21,7 +21,12 @@ Workflow: [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml)
 
 Production site: **https://jabpoint.ee**
 
-`vite.config.ts` uses `base: '/'` so assets resolve at the domain root.
+`vite.config.ts` uses `base: './'` so asset URLs stay relative to the HTML file. That works for:
+
+- `https://yurmil.github.io/JabPoint-site/`
+- `https://jabpoint.ee/` (after custom domain DNS + GitHub Pages CNAME)
+
+Do **not** use `base: '/'` while the live URL is still the project Pages path — CSS/JS would 404 from `yurmil.github.io/assets/...`.
 
 `public/CNAME` contains `jabpoint.ee` and is published with the build. Also set the same custom domain in GitHub → **Settings → Pages**.
 
