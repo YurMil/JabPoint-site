@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
-// For GitHub Pages + custom domain (jabpoint.ee) use '/'.
-// Project-path only (username.github.io/JabPoint-site/) would need '/JabPoint-site/'.
+// Relative base keeps assets working on BOTH:
+// - https://yurmil.github.io/JabPoint-site/
+// - https://jabpoint.ee/ (custom domain, once DNS/CNAME is connected)
+// Absolute '/' broke project Pages (assets requested from yurmil.github.io/assets/...).
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: './',
   test: {
     globals: true,
     environment: 'jsdom',

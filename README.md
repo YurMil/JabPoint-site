@@ -68,8 +68,7 @@ Fallback / Pages URL: https://yurmil.github.io/JabPoint-site/
 
 Or: `npm run deploy`.
 
-`vite.config.ts` → `base: '/'` (required for apex custom domain).  
-`public/CNAME` → `jabpoint.ee`.
+`vite.config.ts` → `base: './'` (relative assets work on both `yurmil.github.io/JabPoint-site/` and `jabpoint.ee`).
 
 ## Prototype
 
