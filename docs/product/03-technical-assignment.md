@@ -123,7 +123,7 @@ Update `site.stats` and i18n labels accordingly (current codebase uses different
 
 | ID | Title | Body |
 |----|-------|------|
-| S1 | Self-Service Garage | Lifts, professional and specialised tools, compressors, and consumables for independent maintenance. |
+| S1 | Self-Service | Lifts, professional and specialised tools, compressors, and consumables for independent maintenance. |
 | S2 | Car Service | Repair and scheduled maintenance by professional masters. |
 | S3 | Detailing | Interior deep cleaning, polishing, protective coatings, full body and cabin care. |
 | S4 | More Services | Tyre fitting; parts selection and ordering; diagnostics; PDR; window tinting; assistance with buying and selling cars (inspection, pre-sale preparation, commission sales, buy-out). |
@@ -151,7 +151,8 @@ Update `site.stats` and i18n labels accordingly (current codebase uses different
 |-------|------|
 | Status | Coming Soon / Beta 2026 |
 | Title | JabPoint Platform |
-| Description | A digital ecosystem connecting car owners, workshops, self-service garages, detailing studios, specialists and automotive companies across Europe. |
+| Description | A digital ecosystem connecting car owners, workshops, self-service sites, detailing studios, specialists and automotive companies across Europe. |
+| Roadmap note | Next, we are building an interactive booking platform: find the best car service near you and book it in a few clicks. Whatever the situation, there is a car service that can help you — and we help you find it. |
 | CTA | Learn More → beta announcement signup |
 
 **Feature cards**
@@ -248,9 +249,9 @@ Extend `SocialNetwork` type to include `tiktok` and `telegram` if retained; drop
 
 | Item | Guidance |
 |------|----------|
-| Title | Brand + Tallinn + primary keyword (e.g. JabPoint — Self-service garage & car service in Tallinn) |
+| Title | Brand + Tallinn + primary keyword (e.g. JabPoint — Self-service & automotive platform in Tallinn) |
 | Description | Compact ecosystem sentence from hero subtitle |
-| Keywords / content | self-service garage Tallinn; car service Tallinn; detailing Tallinn; car repair space |
+| Keywords / content | self-service Tallinn; automotive platform Tallinn; car service Tallinn; detailing Tallinn; car repair space |
 | Semantics | `<header>`, `<main>`, `<section aria-labelledby=…>`, `<footer>` |
 | Open Graph | `og:title`, `og:description`, `og:image`, `og:url`, `og:type=website` |
 | Twitter card | Optional but recommended (`summary_large_image`) |

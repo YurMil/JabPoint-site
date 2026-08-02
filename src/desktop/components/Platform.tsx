@@ -15,6 +15,7 @@ export function Platform() {
               <div className="platform__chip">{t.platBadge}</div>
               <h2 className="platform__title">{t.platTitle}</h2>
               <p className="platform__sub">{t.platSub}</p>
+              <p className="platform__sub">{t.platFuture}</p>
               <div className="platform__actions">
                 <a className="btn-invert" href="#contact">
                   {t.platCta}

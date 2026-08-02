@@ -47,6 +47,8 @@ export type Dictionary = {
   platBadge: string
   platTitle: string
   platSub: string
+  /** Roadmap note: the upcoming interactive booking platform */
+  platFuture: string
   platCta: string
   platNote: string
   platFeatures: FeatureItem[]
@@ -91,9 +93,9 @@ export type Dictionary = {
 
 export const dict: Record<LangCode, Dictionary> = {
   et: {
-    seoTitle: 'JabPoint Tallinn — iseteenindusgaraaž, autoteenindus ja detailing',
+    seoTitle: 'JabPoint Tallinn — iseteenindus, autoplatvorm ja detailing',
     seoDescription:
-      'JabPoint on kaasaegne autoökosüsteem Tallinnas (Plaasi tn 2): iseteenindus, professionaalne töökoda, detailing, rehviteenus ja marketplace ühes kohas. 24/7.',
+      'JabPoint on kaasaegne autoplatvorm Tallinnas (Plaasi tn 2): iseteenindus, professionaalne töökoda, detailing, rehviteenus ja marketplace ühes kohas. 24/7.',
     navServices: 'Teenused',
     navPlatform: 'Platvorm',
     navCommunity: 'Kogukond',
@@ -122,7 +124,7 @@ export const dict: Record<LangCode, Dictionary> = {
     services: [
       {
         n: 'S1',
-        t: 'Iseteenindusgaraaž',
+        t: 'Iseteenindus',
         d: 'Tõstukid, professionaalne ja spetsiaalne tööriist, kompressorid ning kulumaterjalid iseseisvaks hoolduseks.',
       },
       {
@@ -159,7 +161,9 @@ export const dict: Record<LangCode, Dictionary> = {
     platBadge: 'Varsti',
     platTitle: 'JabPoint Platform',
     platSub:
-      'Digitaalne ökosüsteem, mis ühendab autoomanikke, töökodasid, iseteenindusgaraaže, detailing-stuudioid, spetsialiste ja autosektori ettevõtteid üle Euroopa.',
+      'Digitaalne ökosüsteem, mis ühendab autoomanikke, töökodasid, iseteenindusi, detailing-stuudioid, spetsialiste ja autosektori ettevõtteid üle Euroopa.',
+    platFuture:
+      'Edasi arendame interaktiivse broneerimisplatvormi: leia parim autoteenindus enda lähedal ja broneeri paari klikiga. Igas olukorras leidub autoteenindus, mis saab sind aidata — ja meie aitame selle üles leida.',
     platCta: 'Loe lähemalt',
     platNote: 'Beeta 2026',
     platFeatures: [
@@ -224,9 +228,9 @@ export const dict: Record<LangCode, Dictionary> = {
   },
 
   en: {
-    seoTitle: 'JabPoint Tallinn — Self-service garage, car service & detailing',
+    seoTitle: 'JabPoint Tallinn — Self-service, automotive platform & detailing',
     seoDescription:
-      'JabPoint is a modern automotive ecosystem in Tallinn (Plaasi tn 2): self-service garage, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
+      'JabPoint is a modern automotive platform in Tallinn (Plaasi tn 2): self-service, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
     navServices: 'Services',
     navPlatform: 'Platform',
     navCommunity: 'Community',
@@ -255,7 +259,7 @@ export const dict: Record<LangCode, Dictionary> = {
     services: [
       {
         n: 'S1',
-        t: 'Self-Service Garage',
+        t: 'Self-Service',
         d: 'Lifts, professional and specialised tools, compressors, and consumables for independent maintenance.',
       },
       {
@@ -292,7 +296,9 @@ export const dict: Record<LangCode, Dictionary> = {
     platBadge: 'Coming Soon',
     platTitle: 'JabPoint Platform',
     platSub:
-      'A digital ecosystem connecting car owners, workshops, self-service garages, detailing studios, specialists and automotive companies across Europe.',
+      'A digital ecosystem connecting car owners, workshops, self-service sites, detailing studios, specialists and automotive companies across Europe.',
+    platFuture:
+      'Next, we are building an interactive booking platform: find the best car service near you and book it in a few clicks. Whatever the situation, there is a car service that can help you — and we help you find it.',
     platCta: 'Learn More',
     platNote: 'Beta 2026',
     platFeatures: [
@@ -357,9 +363,9 @@ export const dict: Record<LangCode, Dictionary> = {
   },
 
   ru: {
-    seoTitle: 'JabPoint Tallinn — гараж самообслуживания, автосервис и детейлинг',
+    seoTitle: 'JabPoint Tallinn — сервис самообслуживания, автомобильная платформа и детейлинг',
     seoDescription:
-      'JabPoint — современная автомобильная экосистема в Таллинне (Plaasi tn 2): самообслуживание, профессиональный сервис, детейлинг, шиномонтаж и маркетплейс в одном месте. 24/7.',
+      'JabPoint — современная автомобильная платформа в Таллинне (Plaasi tn 2): самообслуживание, профессиональный сервис, детейлинг, шиномонтаж и маркетплейс в одном месте. 24/7.',
     navServices: 'Услуги',
     navPlatform: 'Платформа',
     navCommunity: 'Сообщество',
@@ -388,7 +394,7 @@ export const dict: Record<LangCode, Dictionary> = {
     services: [
       {
         n: 'S1',
-        t: 'Гараж самообслуживания',
+        t: 'Сервис самообслуживания',
         d: 'Подъёмники, профессиональный и специализированный инструмент, компрессоры и расходники для самостоятельного обслуживания.',
       },
       {
@@ -425,7 +431,9 @@ export const dict: Record<LangCode, Dictionary> = {
     platBadge: 'Скоро',
     platTitle: 'JabPoint Platform',
     platSub:
-      'Цифровая экосистема, объединяющая автовладельцев, сервисы, гаражи самообслуживания, детейлинг-студии, специалистов и автокомпании по всей Европе.',
+      'Цифровая экосистема, объединяющая автовладельцев, автосервисы, сервисы самообслуживания, детейлинг-студии, специалистов и автокомпании по всей Европе.',
+    platFuture:
+      'В будущем мы разработаем интерактивную платформу бронирования: найти лучший автосервис ближе и удобнее к вам и записаться в пару кликов. В любой ситуации найдётся автосервис, который сможет вам помочь, — а мы поможем его найти.',
     platCta: 'Узнать больше',
     platNote: 'Бета 2026',
     platFeatures: [

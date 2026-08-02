@@ -7,12 +7,12 @@ import { site } from './site'
  */
 export const seo = {
   keywords:
-    'self-service garage Tallinn, car service Tallinn, detailing Tallinn, car repair space, JabPoint, Plaasi tn 2',
+    'self-service Tallinn, automotive platform Tallinn, car service Tallinn, detailing Tallinn, car repair space, JabPoint, Plaasi tn 2',
 
-  title: 'JabPoint Tallinn — Self-service garage, car service & detailing',
+  title: 'JabPoint Tallinn — Self-service, automotive platform & detailing',
 
   description:
-    'JabPoint is a modern automotive ecosystem in Tallinn (Plaasi tn 2): self-service garage, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
+    'JabPoint is a modern automotive platform in Tallinn (Plaasi tn 2): self-service, professional workshop, detailing, tyre service and marketplace in one place. Open 24/7.',
 
   ogImageAlt: 'JabPoint Tallinn — modern automotive space',
 
