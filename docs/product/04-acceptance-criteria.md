@@ -57,7 +57,7 @@ And I see 24/7 labelled as Booking Available
 Given I open the Our Services section
 Then the title is "Our Services"
 And the description is "Everything related to your car - in one place."
-And I can interact with cards for Self-Service Garage, Car Service, Detailing, and More Services
+And I can interact with cards for Self-Service, Car Service, Detailing, and More Services
 And Detailing Self-Service content is visible (own card or nested under Detailing)
 And each card body covers the scope defined in the technical assignment
 ```
@@ -83,6 +83,7 @@ Then status indicates Coming Soon or Beta 2026
 And the title is "JabPoint Platform"
 And the Europe ecosystem description is shown
 And feature items Online Booking, Ratings, Marketplace, and One App are present
+And a roadmap note announces the upcoming interactive booking platform for finding the best car service nearby
 When I activate Learn More
 Then I can express interest in the beta (form, mailto, or waitlist)
 And the UI does not claim the full platform is already live
@@ -184,7 +185,7 @@ And shared preview text matches approved brand messaging
 
 ```gherkin
 Given I review visible copy and meta description
-Then the site meaningfully covers self-service garage Tallinn, car service Tallinn, detailing Tallinn, and car repair space themes without keyword stuffing
+Then the site meaningfully covers self-service Tallinn, automotive platform Tallinn, car service Tallinn, detailing Tallinn, and car repair space themes without keyword stuffing
 ```
 
 ### AC-PERF-01 — Lighthouse gates

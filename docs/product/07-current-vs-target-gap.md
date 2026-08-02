@@ -48,7 +48,7 @@ Use this file as the practical punch-list before coding. Target values are autho
 | Element | Current (EN) | Target (TZ) |
 |---------|--------------|-------------|
 | Title | “Car service,” / “moving to digital” | “Everything for Your Car” / “in One Place” |
-| Subtitle | Self-service garage + platform-in-progress story | Full ecosystem sentence (self-service, workshop, detailing, tyre, marketplace) |
+| Subtitle | Self-service + platform-in-progress story | Full ecosystem sentence (self-service, workshop, detailing, tyre, marketplace) |
 | Badge / tag | “Self-service · Tallinn” / “Self-service bays” | Media caption: “Modern Automotive Space” |
 | CTA 1 | Book a slot | Book Now |
 | CTA 2 | See the platform | Our Services (scroll) |
@@ -74,7 +74,7 @@ Use this file as the practical punch-list before coding. Target values are autho
 
 | ID | Current (EN) | Target (TZ) |
 |----|--------------|-------------|
-| S1 | Self-service bay — hourly lift/tools | Self-Service Garage — lifts, tools, compressors, consumables |
+| S1 | Self-service bay — hourly lift/tools | Self-Service — lifts, tools, compressors, consumables |
 | S2 | Service & repair | Car Service — repair & maintenance by masters |
 | S3 | Consultation | Detailing — clean, polish, coatings, cabin/body care |
 | S4 | Car sourcing | More Services — tyres, parts, diagnostics, PDR, tint, buy/sell assistance |
@@ -101,7 +101,7 @@ Section title/sub also differ (“What we do today” vs “Our Services” / �
 
 ## 8. Positioning delta (editorial)
 
-Current EN positioning emphasises **self-service garage digitising operations**.  
+Current EN positioning emphasises **self-service digitising operations**.  
 TZ positioning emphasises **one-stop automotive ecosystem + community + European platform**.
 
 Stage 1 copy should shift toward the TZ ecosystem framing while remaining honest about which digital features are live vs Beta 2026.

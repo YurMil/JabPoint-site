@@ -14,6 +14,7 @@ export function MobilePlatform() {
           <div className="m-platform__chip">{t.platBadge}</div>
           <h2 className="m-platform__title">{t.platTitle}</h2>
           <p className="m-platform__sub">{t.platSub}</p>
+          <p className="m-platform__sub">{t.platFuture}</p>
           <div className="m-platform__actions">
             <button type="button" className="m-btn m-btn--invert" onClick={() => scrollToSection('contact')}>
               {t.platCta}

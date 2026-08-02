@@ -2,7 +2,7 @@
 
 ## 1. Executive summary
 
-**JabPoint** is not positioned as a conventional car workshop. It is a next-generation automotive ecosystem and future European infrastructure brand: self-service garage, professional service, detailing, tyre work, marketplace, community space, and — later — a digital platform spanning Europe.
+**JabPoint** is not positioned as a conventional car workshop. It is a next-generation automotive ecosystem and future European infrastructure brand: self-service, professional service, detailing, tyre work, marketplace, community space, and — later — a digital platform spanning Europe.
 
 The **promo website** is Stage 1 of that vision: a brand presentation and business-card site that communicates technology, scalability, and community orientation. It must look and feel premium, industrial, and modern — with strong visual emotion and minimal text noise.
 
@@ -100,7 +100,7 @@ These values supersede placeholder data currently in `src/data/site.ts` once Sta
 
 ## 9. Success outcomes (Stage 1)
 
-- Visitor understands JabPoint as an **ecosystem**, not only a garage.
+- Visitor understands JabPoint as an **ecosystem**, not only a service.
 - Mobile Lighthouse targets met (Performance / Accessibility / SEO ≥ 90).
 - Contact and booking paths are obvious within one thumb-scroll.
 - Platform / franchise story is present without overselling unfinished software.

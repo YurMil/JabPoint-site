@@ -93,7 +93,7 @@ Priority: **P0** = release blocker · **P1** = should ship in Stage 1 · **P2** 
 | FR-03 | Key Facts show: 5 Vehicle Lifts; 2 Detailing Bays; 24/7 Booking Available | P0 | TZ §4.3 | AC-FACTS-01 |
 | FR-04 | Services block titled “Our Services” with subtitle “Everything related to your car - in one place.” and interactive cards S1–S4 plus Detailing Self-Service | P0 | TZ §4.4 | AC-SVC-01 |
 | FR-05 | Atmosphere & Community block presents lounge, PS5, table football, space rental, club/events narrative | P1 | TZ §4.5 | AC-COMM-01 |
-| FR-06 | Platform block status Coming Soon / Beta 2026; features Online Booking, Ratings, Marketplace, One App; Learn More → beta interest | P1 | TZ §4.6 | AC-PLAT-01 |
+| FR-06 | Platform block status Coming Soon / Beta 2026; features Online Booking, Ratings, Marketplace, One App; roadmap note on the upcoming interactive booking platform for finding the best car service nearby; Learn More → beta interest | P1 | TZ §4.6 | AC-PLAT-01 |
 | FR-07 | How It Works: 01 Choose Service → 02 Book → 03 Arrive (Plaasi tn 2) → 04 Enjoy | P1 | TZ §4.7 | AC-HOW-01 |
 | FR-08 | Partners & Franchise: masters workplaces; brand marketing venue; franchise model; geography Tallinn → … → Europe | P1 | TZ §4.8 | AC-PART-01 |
 | FR-09 | Contacts “Let's Talk” with address, amenities, phone, email, Google Maps, social links | P0 | TZ §4.9 | AC-CONTACT-01 |
@@ -104,13 +104,13 @@ Priority: **P0** = release blocker · **P1** = should ship in Stage 1 · **P2** 
 | FR-14 | Smooth scroll from hero “Our Services” to services section | P1 | TZ §4.2 | AC-HERO-01 |
 | FR-15 | Semantic landmark structure: header, main, section, footer | P0 | TZ §5.2 | AC-SEO-01 |
 | FR-16 | Open Graph meta tags for social sharing | P1 | TZ §5.2 | AC-SEO-02 |
-| FR-17 | SEO targeting keywords: self-service garage Tallinn, car service Tallinn, detailing Tallinn, car repair space | P1 | TZ §5.2 | AC-SEO-03 |
+| FR-17 | SEO targeting keywords: self-service Tallinn, automotive platform Tallinn, car service Tallinn, detailing Tallinn, car repair space | P1 | TZ §5.2 | AC-SEO-03 |
 
 ### Service catalogue (authoritative for FR-04)
 
 | Code | Name | Description (EN, from TZ) |
 |------|------|---------------------------|
-| S1 | Self-Service Garage | Lifts, professional and specialised tools, compressors, consumables for DIY maintenance |
+| S1 | Self-Service | Lifts, professional and specialised tools, compressors, consumables for DIY maintenance |
 | S2 | Car Service | Repair and maintenance by professional masters |
 | S3 | Detailing | Interior deep clean, polishing, protective coatings, full body & cabin care |
 | S4 | More Services | Tyre service; parts sourcing/order; diagnostics; PDR; tinting; buy/sell assistance (inspection, pre-sale prep, commission, buy-out) |

@@ -66,7 +66,7 @@ JabPoint - это не просто автосервис. Это совреме�
 - **Заголовок:** Our Services
 - **Описание:** Everything related to your car - in one place.
 - **Интерактивные карточки услуг:**
-  - **S1. Self-Service Garage:** Подъемники, профессиональный и специализированный инструмент, компрессоры, расходные материалы для самостоятельного обслуживания.
+  - **S1. Self-Service:** Подъемники, профессиональный и специализированный инструмент, компрессоры, расходные материалы для самостоятельного обслуживания.
   - **S2. Car Service:** Ремонт и ТО от профессиональных мастеров.
   - **S3. Detailing:** Химчистка, полировка, защитные покрытия, полный уход за кузовом и салоном.
   - **S4. More Services:** Шиномонтаж, подбор и заказ запчастей, диагностика, PDR, тонировка, помощь при покупке и продаже авто (проверка, предпродажная подготовка, комиссия, выкуп).
@@ -80,12 +80,13 @@ JabPoint - это не просто автосервис. Это совреме�
 ### 4.6. Цифровая платформа (JabPoint Platform)
 - **Статус:** Coming Soon / Beta 2026
 - **Заголовок:** JabPoint Platform
-- **Описание:** A digital ecosystem connecting car owners, workshops, self-service garages, detailing studios, specialists and automotive companies across Europe.
+- **Описание:** A digital ecosystem connecting car owners, workshops, self-service sites, detailing studios, specialists and automotive companies across Europe.
 - **Ключевые фичи (Иконки/Карточки):**
   - **Online Booking:** Запись в пару кликов.
   - **Ratings:** Рейтинги мастеров и сервисов.
   - **Marketplace:** Запчасти, автохимия, услуги независимых специалистов.
   - **One App:** Вся инфраструктура в одном приложении.
+- **Планы:** В будущем будет разработана интерактивная платформа бронирования: найти лучший автосервис ближе и удобнее к вам и записаться в пару кликов. В любой ситуации найдётся автосервис, который сможет вам помочь, — а мы поможем его найти.
 - **Кнопка:** `Learn More` (подписка на анонс бета-теста).
 
 ### 4.7. Как это работает (How It Works)
@@ -126,7 +127,7 @@ JabPoint - это не просто автосервис. Это совреме�
 2. **Семантика и SEO:**
    - Чистая семантическая верстка (`<header>`, `<main>`, `<section>`, `<footer>`).
    - Метатеги Open Graph для социальных сетей.
-   - Оптимизация под ключевые слова: self-service garage Tallinn, car service Tallinn, detailing Tallinn, car repair space.
+   - Оптимизация под ключевые слова: self-service Tallinn, automotive platform Tallinn, car service Tallinn, detailing Tallinn, car repair space.
 3. **Формы и Интеграции:**
    - Модуль быстрой онлайн-записи / кнопка интеграции внешнего сервиса бронирования.
    - Кнопка быстрых контактов (WhatsApp / Telegram / Телефон).
