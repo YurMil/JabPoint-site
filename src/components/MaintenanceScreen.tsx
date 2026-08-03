@@ -1,11 +1,35 @@
+import type { ComponentType } from 'react'
 import { useEffect } from 'react'
-import { site } from '../data/site'
+import { site, type SocialNetwork } from '../data/site'
 import { useApp } from '../hooks/useApp'
+import {
+  IconFacebook,
+  IconInstagram,
+  IconTelegram,
+  IconYouTube,
+} from './socialIcons'
 import './MaintenanceScreen.css'
+
+/** Social networks shown on the maintenance screen (order fixed). */
+const MAINT_SOCIAL_IDS: SocialNetwork[] = ['youtube', 'telegram', 'facebook', 'instagram']
+
+const ICONS: Record<
+  (typeof MAINT_SOCIAL_IDS)[number],
+  ComponentType<{ className?: string }>
+> = {
+  youtube: IconYouTube,
+  telegram: IconTelegram,
+  facebook: IconFacebook,
+  instagram: IconInstagram,
+}
 
 /** Full-viewport technical-works screen — shown when VITE_MAINTENANCE_MODE is on. */
 export function MaintenanceScreen() {
   const { t, lang, setLang } = useApp()
+
+  const links = MAINT_SOCIAL_IDS.map((id) => site.social.find((s) => s.id === id)).filter(
+    (s): s is (typeof site.social)[number] => Boolean(s?.href),
+  )
 
   useEffect(() => {
     document.title = `${t.maintTitle1} ${t.maintTitle2} — ${site.brand}`
@@ -54,21 +78,24 @@ export function MaintenanceScreen() {
 
         <p className="maint__sub">{t.maintSub}</p>
 
-        <div className="maint__actions">
-          <a className="maint__btn maint__btn--primary" href={site.contact.phone.href}>
-            {t.callUs}
-            <strong>{site.contact.phone.value}</strong>
-          </a>
-          <a
-            className="maint__btn"
-            href={site.contact.telegram.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.telegram}
-            <strong>{site.contact.telegram.value}</strong>
-          </a>
-        </div>
+        <nav className="maint__social" aria-label={t.socialLabel}>
+          {links.map((s) => {
+            const Icon = ICONS[s.id as (typeof MAINT_SOCIAL_IDS)[number]]
+            return (
+              <a
+                key={s.id}
+                className="maint__social-item"
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                title={s.label}
+              >
+                <Icon className="maint__social-icon" />
+              </a>
+            )
+          })}
+        </nav>
 
         <p className="maint__note">{t.maintNote}</p>
       </main>

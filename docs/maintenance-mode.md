@@ -31,4 +31,4 @@ npm run dev
 
 ET / EN / RU strings: `maintBadge`, `maintTitle1`, `maintTitle2`, `maintSub`, `maintNote` in [`src/data/i18n.ts`](../src/data/i18n.ts).
 
-The screen keeps language switcher + phone / Telegram so visitors can still reach JabPoint.
+The screen keeps a language switcher and large social icons (YouTube, Telegram, Facebook, Instagram).
