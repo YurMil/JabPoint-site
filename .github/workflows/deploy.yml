@@ -4,6 +4,11 @@ on:
   push:
     branches: [main, master]
   workflow_dispatch:
+    inputs:
+      maintenance_mode:
+        description: 'Show maintenance page ("technical works in progress")'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -24,7 +29,33 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+
+      - name: Resolve maintenance mode
+        id: maint
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_FLAG: ${{ inputs.maintenance_mode }}
+          REPO_VAR: ${{ vars.MAINTENANCE_MODE }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            RAW="$DISPATCH_FLAG"
+          else
+            RAW="${REPO_VAR:-false}"
+          fi
+          RAW_LC=$(printf '%s' "$RAW" | tr '[:upper:]' '[:lower:]')
+          case "$RAW_LC" in
+            true|1|yes|on) FLAG=true ;;
+            *) FLAG=false ;;
+          esac
+          echo "enabled=$FLAG" >> "$GITHUB_OUTPUT"
+          echo "Maintenance mode for this build: $FLAG"
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_MAINTENANCE_MODE: ${{ steps.maint.outputs.enabled }}
+          VITE_GOOGLE_MAPS_EMBED_KEY: ${{ secrets.VITE_GOOGLE_MAPS_EMBED_KEY }}
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

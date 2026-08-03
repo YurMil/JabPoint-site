@@ -1,4 +1,6 @@
 import { lazy, Suspense } from 'react'
+import { MaintenanceScreen } from './components/MaintenanceScreen'
+import { isMaintenanceModeEnabled } from './data/maintenance'
 import { useViewportMode } from './hooks/useIsMobile'
 
 const DesktopApp = lazy(() => import('./desktop/DesktopApp'))
@@ -26,9 +28,14 @@ function ShellFallback() {
 /**
  * Root switch: separate desktop vs native-style mobile codebases
  * share data (site.ts / i18n) and theme/lang context only.
+ * When VITE_MAINTENANCE_MODE is on, only the maintenance screen is shown.
  */
 export default function App() {
   const mode = useViewportMode()
+
+  if (isMaintenanceModeEnabled()) {
+    return <MaintenanceScreen />
+  }
 
   return (
     <Suspense fallback={<ShellFallback />}>
