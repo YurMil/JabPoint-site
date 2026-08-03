@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react'
 import { useEffect } from 'react'
-import { site, type SocialNetwork } from '../data/site'
+import { site } from '../data/site'
 import { useApp } from '../hooks/useApp'
 import {
   IconFacebook,
@@ -11,12 +11,10 @@ import {
 import './MaintenanceScreen.css'
 
 /** Social networks shown on the maintenance screen (order fixed). */
-const MAINT_SOCIAL_IDS: SocialNetwork[] = ['youtube', 'telegram', 'facebook', 'instagram']
+const MAINT_SOCIAL_IDS = ['youtube', 'telegram', 'facebook', 'instagram'] as const
+type MaintSocialId = (typeof MAINT_SOCIAL_IDS)[number]
 
-const ICONS: Record<
-  (typeof MAINT_SOCIAL_IDS)[number],
-  ComponentType<{ className?: string }>
-> = {
+const ICONS: Record<MaintSocialId, ComponentType<{ className?: string }>> = {
   youtube: IconYouTube,
   telegram: IconTelegram,
   facebook: IconFacebook,
@@ -27,9 +25,11 @@ const ICONS: Record<
 export function MaintenanceScreen() {
   const { t, lang, setLang } = useApp()
 
-  const links = MAINT_SOCIAL_IDS.map((id) => site.social.find((s) => s.id === id)).filter(
-    (s): s is (typeof site.social)[number] => Boolean(s?.href),
-  )
+  const links = MAINT_SOCIAL_IDS.flatMap((id) => {
+    const entry = site.social.find((s) => s.id === id)
+    if (!entry?.href) return []
+    return [{ id, label: entry.label as string, href: entry.href as string }]
+  })
 
   useEffect(() => {
     document.title = `${t.maintTitle1} ${t.maintTitle2} — ${site.brand}`
@@ -80,7 +80,7 @@ export function MaintenanceScreen() {
 
         <nav className="maint__social" aria-label={t.socialLabel}>
           {links.map((s) => {
-            const Icon = ICONS[s.id as (typeof MAINT_SOCIAL_IDS)[number]]
+            const Icon = ICONS[s.id]
             return (
               <a
                 key={s.id}
