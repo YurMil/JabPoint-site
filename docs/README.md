@@ -22,6 +22,7 @@ Structural documentation for the marketing site codebase.
 | [Styling](./styling.md) | Design tokens, themes, CSS loading |
 | [Testing](./testing.md) | Vitest suites and how to run them |
 | [Deployment](./deployment.md) | Build, GitHub Pages, assets |
+| [Maintenance mode](./maintenance-mode.md) | Toggle technical-works screen via GitHub Actions |
 
 **Stack:** React 19 · TypeScript · Vite 7 · Vitest  
 

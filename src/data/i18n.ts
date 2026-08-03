@@ -89,6 +89,11 @@ export type Dictionary = {
   whatsapp: string
   telegram: string
   quickContactsLabel: string
+  maintBadge: string
+  maintTitle1: string
+  maintTitle2: string
+  maintSub: string
+  maintNote: string
 }
 
 export const dict: Record<LangCode, Dictionary> = {
@@ -225,6 +230,12 @@ export const dict: Record<LangCode, Dictionary> = {
     whatsapp: 'WhatsApp',
     telegram: 'Telegram',
     quickContactsLabel: 'Kiire kontakt',
+    maintBadge: 'Hooldus',
+    maintTitle1: 'Käimas on',
+    maintTitle2: 'tehnilised tööd',
+    maintSub:
+      'Uuendame JabPointi veebilehte. Broneerimine ja küsimused töötavad telefoni ning Telegrami kaudu — oleme peagi tagasi.',
+    maintNote: 'Plaasi tn 2, Tallinn · peagi taas online',
   },
 
   en: {
@@ -360,6 +371,12 @@ export const dict: Record<LangCode, Dictionary> = {
     whatsapp: 'WhatsApp',
     telegram: 'Telegram',
     quickContactsLabel: 'Quick contact',
+    maintBadge: 'Maintenance',
+    maintTitle1: 'Technical work',
+    maintTitle2: 'in progress',
+    maintSub:
+      'We are updating the JabPoint website. Booking and questions still work by phone and Telegram — we will be back shortly.',
+    maintNote: 'Plaasi tn 2, Tallinn · back online soon',
   },
 
   ru: {
@@ -495,5 +512,11 @@ export const dict: Record<LangCode, Dictionary> = {
     whatsapp: 'WhatsApp',
     telegram: 'Telegram',
     quickContactsLabel: 'Быстрый контакт',
+    maintBadge: 'Техработы',
+    maintTitle1: 'Ведутся',
+    maintTitle2: 'технические работы',
+    maintSub:
+      'Мы обновляем сайт JabPoint. Запись и вопросы по телефону и в Telegram работают — скоро вернёмся.',
+    maintNote: 'Plaasi tn 2, Tallinn · скоро снова online',
   },
 }

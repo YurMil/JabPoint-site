@@ -63,6 +63,14 @@ npm run deploy
 
 Uses `gh-pages` to push `dist` to the `gh-pages` branch. Requires GitHub push credentials. Prefer the GitHub Actions workflow above when using custom domain + Pages.
 
+## Maintenance mode
+
+To show the full-site “technical works” screen without a code change:
+
+**Actions → Deploy to GitHub Pages → Run workflow →** enable **Show maintenance page**.
+
+Details: [maintenance-mode.md](./maintenance-mode.md).
+
 ## Assets checklist
 
 Before going live, confirm in `src/data/site.ts`:
