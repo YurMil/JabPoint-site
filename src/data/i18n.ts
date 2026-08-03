@@ -234,7 +234,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintTitle1: 'Käimas on',
     maintTitle2: 'tehnilised tööd',
     maintSub:
-      'Uuendame JabPointi veebilehte. Broneerimine ja küsimused töötavad telefoni ning Telegrami kaudu — oleme peagi tagasi.',
+      'Uuendame JabPointi veebilehte. Uudiseid ja kontakte leiad sotsiaalmeediast — oleme peagi tagasi.',
     maintNote: 'Plaasi tn 2, Tallinn · peagi taas online',
   },
 
@@ -375,7 +375,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintTitle1: 'Technical work',
     maintTitle2: 'in progress',
     maintSub:
-      'We are updating the JabPoint website. Booking and questions still work by phone and Telegram — we will be back shortly.',
+      'We are updating the JabPoint website. Follow us on social media for news — we will be back shortly.',
     maintNote: 'Plaasi tn 2, Tallinn · back online soon',
   },
 
@@ -516,7 +516,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintTitle1: 'Ведутся',
     maintTitle2: 'технические работы',
     maintSub:
-      'Мы обновляем сайт JabPoint. Запись и вопросы по телефону и в Telegram работают — скоро вернёмся.',
+      'Мы обновляем сайт JabPoint. Новости и контакты — в соцсетях, скоро вернёмся.',
     maintNote: 'Plaasi tn 2, Tallinn · скоро снова online',
   },
 }
