@@ -127,6 +127,25 @@ export const site = {
   },
 
   /**
+   * Photo strip of the Tallinn point — shown as a horizontal rail.
+   * `id` maps to a caption in i18n (`galleryCaptions`); order here is the
+   * order on screen. To add a photo: drop the file into `public/img/gallery/`,
+   * add an entry here and a caption for every language in ./i18n.ts
+   */
+  gallery: [
+    { id: 'reception', file: '01-reception.jpg' },
+    { id: 'lifts', file: '02-lifts.jpg' },
+    { id: 'lounge', file: '03-lounge.jpg' },
+    { id: 'masters', file: '04-masters.jpg' },
+    { id: 'onLift', file: '05-on-lift.jpg' },
+    { id: 'opening', file: '06-opening.jpg' },
+    { id: 'kids', file: '07-kids.jpg' },
+    { id: 'workday', file: '08-workday.jpg' },
+    { id: 'detailing', file: '09-detailing.jpg' },
+    { id: 'team', file: '10-team.jpg' },
+  ] as const,
+
+  /**
    * Google Maps — Plaasi 2, Tallinn.
    * Prefer Maps Embed API v1 when `VITE_GOOGLE_MAPS_EMBED_KEY` is set in `.env`.
    * Without a key, falls back to a public embed URL (no billing key required).
@@ -155,3 +174,11 @@ export function getMapsEmbedUrl(): string {
 }
 
 export type SiteConfig = typeof site
+
+/** Photo ids used to look up gallery captions in i18n. */
+export type GalleryId = (typeof site.gallery)[number]['id']
+
+/** Public URL of a gallery photo. */
+export function getGalleryImageUrl(file: string): string {
+  return `${import.meta.env.BASE_URL}img/gallery/${file}`
+}
