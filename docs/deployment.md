@@ -41,6 +41,23 @@ After DNS propagates, turn on **Enforce HTTPS** in Pages settings.
 
 Legacy project path `https://yurmil.github.io/JabPoint-site/` may redirect or still work depending on Pages settings; canonical SEO points to `https://jabpoint.ee/`.
 
+### Troubleshooting: deploy job hangs, then "Timeout reached, aborting!"
+
+Symptom: the `build` job is green, but `deploy` prints `Current status: deployment_queued`
+(or `deployment_in_progress`) every 5 s until it aborts and cancels the deployment.
+
+This is the GitHub Pages backend being slow or jammed, not a build problem. Two things keep
+it from cascading:
+
+- Both workflows use `concurrency: group: pages` with **`cancel-in-progress: false`**.
+  Cancelling a run while `actions/deploy-pages` is mid-deployment leaves a stuck deployment
+  server-side, and the next run then hangs too. Do not flip this back to `true`.
+- The deploy step allows 20 min (`timeout: 1200000`) and retries once after a 60 s pause
+  before failing the job.
+
+If a run still fails this way, re-run the `deploy` job (**Actions → run → Re-run failed jobs**);
+avoid pushing several commits in quick succession while a deployment is in flight.
+
 ## SEO & Open Graph
 
 Crawl-facing defaults live in [`index.html`](../index.html) (title, description, keywords, canonical, Open Graph, Twitter Card, JSON-LD).
