@@ -71,17 +71,15 @@ export function Gallery() {
             const caption = t.galleryCaptions[photo.id]
             return (
               <li key={photo.id} className="gallery__item">
-                <figure className="gallery__figure">
-                  <img
-                    className="gallery__img"
-                    src={getGalleryImageUrl(photo.file)}
-                    alt={caption}
-                    loading="lazy"
-                    decoding="async"
-                    onLoad={syncArrows}
-                  />
-                  <figcaption className="gallery__caption">{caption}</figcaption>
-                </figure>
+                {/* Caption is alt-text only — the rail stays purely visual */}
+                <img
+                  className="gallery__img"
+                  src={getGalleryImageUrl(photo.file)}
+                  alt={caption}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={syncArrows}
+                />
               </li>
             )
           })}

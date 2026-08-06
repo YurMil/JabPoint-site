@@ -17,16 +17,14 @@ export function MobileGallery() {
           const caption = t.galleryCaptions[photo.id]
           return (
             <li key={photo.id} className="m-gallery__item">
-              <figure className="m-gallery__figure">
-                <img
-                  className="m-gallery__img"
-                  src={getGalleryImageUrl(photo.file)}
-                  alt={caption}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption className="m-gallery__caption">{caption}</figcaption>
-              </figure>
+              {/* Caption is alt-text only — the rail stays purely visual */}
+              <img
+                className="m-gallery__img"
+                src={getGalleryImageUrl(photo.file)}
+                alt={caption}
+                loading="lazy"
+                decoding="async"
+              />
             </li>
           )
         })}
