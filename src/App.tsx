@@ -1,5 +1,8 @@
+import { useEffect } from 'react'
 import { lazy, Suspense } from 'react'
 import { MaintenanceScreen } from './components/MaintenanceScreen'
+import { StagingBanner } from './components/StagingBanner'
+import { isStagingDeploy } from './data/deployTarget'
 import { isMaintenanceModeEnabled } from './data/maintenance'
 import { useViewportMode } from './hooks/useIsMobile'
 
@@ -29,17 +32,31 @@ function ShellFallback() {
  * Root switch: separate desktop vs native-style mobile codebases
  * share data (site.ts / i18n) and theme/lang context only.
  * When VITE_MAINTENANCE_MODE is on, only the maintenance screen is shown.
+ * Staging builds also show a persistent TEST ribbon.
  */
 export default function App() {
   const mode = useViewportMode()
+  const staging = isStagingDeploy()
 
-  if (isMaintenanceModeEnabled()) {
-    return <MaintenanceScreen />
-  }
+  useEffect(() => {
+    document.body.classList.toggle('is-staging', staging)
+    return () => {
+      document.body.classList.remove('is-staging')
+    }
+  }, [staging])
 
-  return (
+  const shell = isMaintenanceModeEnabled() ? (
+    <MaintenanceScreen />
+  ) : (
     <Suspense fallback={<ShellFallback />}>
       {mode === 'mobile' ? <MobileApp /> : <DesktopApp />}
     </Suspense>
+  )
+
+  return (
+    <>
+      <StagingBanner />
+      {shell}
+    </>
   )
 }

@@ -71,6 +71,12 @@ To show the full-site “technical works” screen without a code change:
 
 Details: [maintenance-mode.md](./maintenance-mode.md).
 
+## Staging preview (pre-release)
+
+For a GitHub-linked test deploy that is **not** the live release, use branch `staging` and `/staging/` on Pages.
+
+Details and URLs: [staging.md](./staging.md).
+
 ## Assets checklist
 
 Before going live, confirm in `src/data/site.ts`:

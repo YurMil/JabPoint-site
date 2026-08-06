@@ -3,6 +3,7 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Services } from './components/Services'
 import { Community } from './components/Community'
+import { Gallery } from './components/Gallery'
 import { Platform } from './components/Platform'
 import { HowItWorks } from './components/HowItWorks'
 import { Partners } from './components/Partners'
@@ -22,6 +23,7 @@ export default function DesktopApp() {
         <Hero />
         <Services />
         <Community />
+        <Gallery />
         <Platform />
         <HowItWorks />
         <Partners />

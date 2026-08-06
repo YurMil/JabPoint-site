@@ -24,10 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+
       - run: npm ci
 
       - name: Resolve maintenance mode
@@ -50,15 +54,38 @@ jobs:
           echo "enabled=$FLAG" >> "$GITHUB_OUTPUT"
           echo "Maintenance mode for this build: $FLAG"
 
-      - name: Build
+      - name: Build production
         run: npm run build
         env:
           VITE_MAINTENANCE_MODE: ${{ steps.maint.outputs.enabled }}
           VITE_GOOGLE_MAPS_EMBED_KEY: ${{ secrets.VITE_GOOGLE_MAPS_EMBED_KEY }}
 
+      - name: Assemble site root
+        run: |
+          mkdir -p _site
+          cp -a dist/. _site/
+
+      - name: Attach staging preview (branch staging)
+        env:
+          VITE_GOOGLE_MAPS_EMBED_KEY: ${{ secrets.VITE_GOOGLE_MAPS_EMBED_KEY }}
+        run: |
+          if ! git fetch --depth=1 origin staging 2>/dev/null; then
+            echo "No origin/staging branch — skipping /staging/"
+            exit 0
+          fi
+          git worktree add "$RUNNER_TEMP/jab-staging" origin/staging
+          cd "$RUNNER_TEMP/jab-staging"
+          npm ci
+          VITE_STAGING=true npm run build
+          mkdir -p "$GITHUB_WORKSPACE/_site/staging"
+          cp -a dist/. "$GITHUB_WORKSPACE/_site/staging/"
+          printf 'User-agent: *\nDisallow: /\n' > "$GITHUB_WORKSPACE/_site/staging/robots.txt"
+          rm -f "$GITHUB_WORKSPACE/_site/staging/CNAME" "$GITHUB_WORKSPACE/_site/staging/sitemap.xml"
+          echo "Staging preview attached at /staging/"
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
 
   deploy:
     needs: build

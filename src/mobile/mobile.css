@@ -299,6 +299,50 @@
   color: var(--muted);
 }
 
+/* ── Gallery: swipeable photo rail ── */
+.m-gallery__head {
+  padding: 0 6px;
+}
+
+.m-gallery__sub {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.m-gallery__rail {
+  display: flex;
+  gap: 12px;
+  margin: 18px -12px 0;
+  padding: 4px 12px 12px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.m-gallery__rail::-webkit-scrollbar {
+  display: none;
+}
+
+.m-gallery__item {
+  flex: 0 0 min(72vw, 260px);
+  scroll-snap-align: start;
+}
+
+.m-gallery__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+
 /* ── Services: horizontal snap carousel ── */
 .m-services {
   display: flex;

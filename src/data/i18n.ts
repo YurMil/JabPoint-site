@@ -7,7 +7,7 @@
  * Canonical Stage-1 EN copy: docs/product/03-technical-assignment.md
  */
 
-import type { LangCode } from './site'
+import type { LangCode, GalleryId } from './site'
 
 export type ServiceItem = { n: string; t: string; d: string }
 export type FeatureItem = { t: string; d: string }
@@ -44,6 +44,13 @@ export type Dictionary = {
   communitySub: string
   communityHighlights: FeatureItem[]
   communityStory: string
+  galleryTitle: string
+  gallerySub: string
+  /** Caption per photo — keys match `site.gallery[].id` */
+  galleryCaptions: Record<GalleryId, string>
+  /** Accessible labels for the rail arrows */
+  galleryPrev: string
+  galleryNext: string
   platBadge: string
   platTitle: string
   /** Short teaser shown while the full platform details are hidden */
@@ -97,6 +104,7 @@ export type Dictionary = {
   maintTitle2: string
   maintSub: string
   maintNote: string
+  stagingBanner: string
 }
 
 export const dict: Record<LangCode, Dictionary> = {
@@ -166,6 +174,24 @@ export const dict: Record<LangCode, Dictionary> = {
     ],
     communityStory:
       'JabPoint on autoklubi ja koht suhtlemiseks — mitte ainult boks, kuhu auto jätta.',
+    galleryTitle: 'Meie punkt seestpoolt',
+    gallerySub: 'Nii näeb JabPoint Tallinnas välja täna — tõsted, tööriistad ja puhkeala.',
+    galleryCaptions: {
+      reception: 'Vastuvõtt ja ooteala',
+      bar: 'JabPointi baar ja vastuvõtulett',
+      lifts: 'Tõstukid ja töökohad',
+      hall: 'Töökoja saal tõstukitega',
+      lounge: 'Kohvinurk boksi kõrval',
+      masters: 'Meistrid töös',
+      onLift: 'Iga auto on teretulnud',
+      opening: 'Avamine ja klubiüritused',
+      kids: 'Lounge lastele ja külalistele',
+      workday: 'Tavaline tööpäev',
+      detailing: 'Detailing-tsoon',
+      team: 'Meie meeskond',
+    },
+    galleryPrev: 'Eelmised fotod',
+    galleryNext: 'Järgmised fotod',
     platBadge: 'Varsti',
     platTitle: 'JabPoint Platform',
     platTeaser:
@@ -241,6 +267,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintSub:
       'Uuendame JabPointi veebilehte. Uudiseid ja kontakte leiad sotsiaalmeediast — oleme peagi tagasi.',
     maintNote: 'Plaasi tn 2, Tallinn · peagi taas online',
+    stagingBanner: 'Test / staging — mitte live-sait',
   },
 
   en: {
@@ -309,6 +336,24 @@ export const dict: Record<LangCode, Dictionary> = {
     ],
     communityStory:
       'JabPoint is an automotive club and a place to connect — not only a bay to leave your car.',
+    galleryTitle: 'Inside our point',
+    gallerySub: 'This is JabPoint Tallinn today — lifts, tools and a place to wait in comfort.',
+    galleryCaptions: {
+      reception: 'Reception and waiting area',
+      bar: 'The JabPoint bar and front desk',
+      lifts: 'Lifts and work bays',
+      hall: 'Workshop hall with the lifts',
+      lounge: 'Coffee corner next to the bays',
+      masters: 'Masters at work',
+      onLift: 'Every car is welcome',
+      opening: 'Opening day and club events',
+      kids: 'Lounge for kids and guests',
+      workday: 'An ordinary working day',
+      detailing: 'Detailing zone',
+      team: 'Our team',
+    },
+    galleryPrev: 'Previous photos',
+    galleryNext: 'Next photos',
     platBadge: 'Coming Soon',
     platTitle: 'JabPoint Platform',
     platTeaser:
@@ -384,6 +429,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintSub:
       'We are updating the JabPoint website. Follow us on social media for news — we will be back shortly.',
     maintNote: 'Plaasi tn 2, Tallinn · back online soon',
+    stagingBanner: 'Test / staging — not the live site',
   },
 
   ru: {
@@ -452,6 +498,24 @@ export const dict: Record<LangCode, Dictionary> = {
     ],
     communityStory:
       'JabPoint — это автомобильный клуб и место для общения, а не только бокс, куда оставляют машину.',
+    galleryTitle: 'Наша точка изнутри',
+    gallerySub: 'Так JabPoint в Таллинне выглядит сегодня: подъёмники, инструмент и зона отдыха.',
+    galleryCaptions: {
+      reception: 'Ресепшн и зона ожидания',
+      bar: 'Барная стойка и ресепшн JabPoint',
+      lifts: 'Подъёмники и рабочие посты',
+      hall: 'Цех с подъёмниками',
+      lounge: 'Кофе-зона рядом с боксами',
+      masters: 'Мастера за работой',
+      onLift: 'Здесь рады любой машине',
+      opening: 'Открытие и клубные встречи',
+      kids: 'Лаунж для детей и гостей',
+      workday: 'Обычный рабочий день',
+      detailing: 'Детейлинг-зона',
+      team: 'Наша команда',
+    },
+    galleryPrev: 'Предыдущие фото',
+    galleryNext: 'Следующие фото',
     platBadge: 'Скоро',
     platTitle: 'JabPoint Platform',
     platTeaser:
@@ -527,5 +591,6 @@ export const dict: Record<LangCode, Dictionary> = {
     maintSub:
       'Мы обновляем сайт JabPoint. Новости и контакты — в соцсетях, скоро вернёмся.',
     maintNote: 'Plaasi tn 2, Tallinn · скоро снова online',
+    stagingBanner: 'Test / staging — не боевой сайт',
   },
 }
