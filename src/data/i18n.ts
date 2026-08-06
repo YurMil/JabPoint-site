@@ -178,7 +178,9 @@ export const dict: Record<LangCode, Dictionary> = {
     gallerySub: 'Nii näeb JabPoint Tallinnas välja täna — tõsted, tööriistad ja puhkeala.',
     galleryCaptions: {
       reception: 'Vastuvõtt ja ooteala',
+      bar: 'JabPointi baar ja vastuvõtulett',
       lifts: 'Tõstukid ja töökohad',
+      hall: 'Töökoja saal tõstukitega',
       lounge: 'Kohvinurk boksi kõrval',
       masters: 'Meistrid töös',
       onLift: 'Iga auto on teretulnud',
@@ -338,7 +340,9 @@ export const dict: Record<LangCode, Dictionary> = {
     gallerySub: 'This is JabPoint Tallinn today — lifts, tools and a place to wait in comfort.',
     galleryCaptions: {
       reception: 'Reception and waiting area',
+      bar: 'The JabPoint bar and front desk',
       lifts: 'Lifts and work bays',
+      hall: 'Workshop hall with the lifts',
       lounge: 'Coffee corner next to the bays',
       masters: 'Masters at work',
       onLift: 'Every car is welcome',
@@ -498,7 +502,9 @@ export const dict: Record<LangCode, Dictionary> = {
     gallerySub: 'Так JabPoint в Таллинне выглядит сегодня: подъёмники, инструмент и зона отдыха.',
     galleryCaptions: {
       reception: 'Ресепшн и зона ожидания',
+      bar: 'Барная стойка и ресепшн JabPoint',
       lifts: 'Подъёмники и рабочие посты',
+      hall: 'Цех с подъёмниками',
       lounge: 'Кофе-зона рядом с боксами',
       masters: 'Мастера за работой',
       onLift: 'Здесь рады любой машине',

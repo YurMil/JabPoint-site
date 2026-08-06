@@ -129,12 +129,15 @@ export const site = {
   /**
    * Photo strip of the Tallinn point — shown as a horizontal rail.
    * `id` maps to a caption in i18n (`galleryCaptions`); order here is the
-   * order on screen. To add a photo: drop the file into `public/img/gallery/`,
-   * add an entry here and a caption for every language in ./i18n.ts
+   * order on screen — the number in a file name is only when it was added.
+   * To add a photo: drop the file into `public/img/gallery/`, add an entry
+   * here and a caption for every language in ./i18n.ts
    */
   gallery: [
     { id: 'reception', file: '01-reception.jpg' },
+    { id: 'bar', file: '11-bar.jpg' },
     { id: 'lifts', file: '02-lifts.jpg' },
+    { id: 'hall', file: '12-hall.jpg' },
     { id: 'lounge', file: '03-lounge.jpg' },
     { id: 'masters', file: '04-masters.jpg' },
     { id: 'onLift', file: '05-on-lift.jpg' },
