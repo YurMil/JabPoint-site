@@ -7,6 +7,7 @@ import { MobileTabBar } from './components/MobileTabBar'
 import { MobileHero } from './components/MobileHero'
 import { MobileServices } from './components/MobileServices'
 import { MobileCommunity } from './components/MobileCommunity'
+import { MobileGallery } from './components/MobileGallery'
 import { MobilePlatform } from './components/MobilePlatform'
 import { MobileHow } from './components/MobileHow'
 import { MobilePartners } from './components/MobilePartners'
@@ -32,6 +33,7 @@ export default function MobileApp() {
         <MobileHero />
         <MobileServices />
         <MobileCommunity />
+        <MobileGallery />
         <MobilePlatform />
         <MobileHow />
         <MobilePartners />

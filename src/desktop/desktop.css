@@ -526,6 +526,68 @@
   color: var(--fg-soft);
 }
 
+/* ── Gallery: full-bleed photo rail ── */
+.gallery__head {
+  max-width: 620px;
+}
+
+.gallery__sub {
+  margin: 14px 0 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.gallery__rail {
+  display: flex;
+  gap: 16px;
+  margin: 32px 0 0;
+  padding: 4px max(28px, calc((100vw - 1240px) / 2)) 16px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.gallery__item {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+
+.gallery__figure {
+  margin: 0;
+}
+
+.gallery__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  transition: transform 0.25s ease;
+}
+
+.gallery__item:hover .gallery__img {
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__img,
+  .gallery__item:hover .gallery__img {
+    transition: none;
+    transform: none;
+  }
+}
+
+.gallery__caption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 /* ── Partners ── */
 .partners-grid {
   display: grid;
