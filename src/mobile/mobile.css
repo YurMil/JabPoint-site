@@ -332,10 +332,6 @@
   scroll-snap-align: start;
 }
 
-.m-gallery__figure {
-  margin: 0;
-}
-
 .m-gallery__img {
   display: block;
   width: 100%;
@@ -346,12 +342,6 @@
   background: var(--card);
 }
 
-.m-gallery__caption {
-  margin-top: 8px;
-  font-size: 12.5px;
-  line-height: 1.4;
-  color: var(--muted);
-}
 
 /* ── Services: horizontal snap carousel ── */
 .m-services {
