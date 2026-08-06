@@ -636,6 +636,12 @@
   align-items: center;
 }
 
+.platform__inner--minimal {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  padding: 80px 56px;
+}
+
 .platform__chip {
   display: inline-flex;
   align-items: center;
