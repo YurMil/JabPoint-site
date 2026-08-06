@@ -48,6 +48,9 @@ export type Dictionary = {
   gallerySub: string
   /** Caption per photo — keys match `site.gallery[].id` */
   galleryCaptions: Record<GalleryId, string>
+  /** Accessible labels for the rail arrows */
+  galleryPrev: string
+  galleryNext: string
   platBadge: string
   platTitle: string
   /** Short teaser shown while the full platform details are hidden */
@@ -184,6 +187,8 @@ export const dict: Record<LangCode, Dictionary> = {
       detailing: 'Detailing-tsoon',
       team: 'Meie meeskond',
     },
+    galleryPrev: 'Eelmised fotod',
+    galleryNext: 'Järgmised fotod',
     platBadge: 'Varsti',
     platTitle: 'JabPoint Platform',
     platTeaser:
@@ -341,6 +346,8 @@ export const dict: Record<LangCode, Dictionary> = {
       detailing: 'Detailing zone',
       team: 'Our team',
     },
+    galleryPrev: 'Previous photos',
+    galleryNext: 'Next photos',
     platBadge: 'Coming Soon',
     platTitle: 'JabPoint Platform',
     platTeaser:
@@ -498,6 +505,8 @@ export const dict: Record<LangCode, Dictionary> = {
       detailing: 'Детейлинг-зона',
       team: 'Наша команда',
     },
+    galleryPrev: 'Предыдущие фото',
+    galleryNext: 'Следующие фото',
     platBadge: 'Скоро',
     platTitle: 'JabPoint Platform',
     platTeaser:
