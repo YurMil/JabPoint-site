@@ -46,8 +46,11 @@ export type Dictionary = {
   communityStory: string
   platBadge: string
   platTitle: string
+  /** Short teaser shown while the full platform details are hidden */
+  platTeaser: string
+  /** Full description — currently not rendered, kept for when details are revealed */
   platSub: string
-  /** Roadmap note: the upcoming interactive booking platform */
+  /** Roadmap note: the upcoming interactive booking platform. Currently not rendered. */
   platFuture: string
   platCta: string
   platNote: string
@@ -166,6 +169,8 @@ export const dict: Record<LangCode, Dictionary> = {
       'JabPoint on autoklubi ja koht suhtlemiseks — mitte ainult boks, kuhu auto jätta.',
     platBadge: 'Varsti',
     platTitle: 'JabPoint Platform',
+    platTeaser:
+      'Peagi ootavad ees uudised ning platvormi ja teeninduse suured uuendused. Püsi lainel.',
     platSub:
       'Digitaalne ökosüsteem, mis ühendab autoomanikke, töökodasid, iseteenindusi, detailing-stuudioid, spetsialiste ja autosektori ettevõtteid üle Euroopa.',
     platFuture:
@@ -308,6 +313,8 @@ export const dict: Record<LangCode, Dictionary> = {
       'JabPoint is an automotive club and a place to connect — not only a bay to leave your car.',
     platBadge: 'Coming Soon',
     platTitle: 'JabPoint Platform',
+    platTeaser:
+      'Big news and major platform and service updates are coming soon. Stay tuned.',
     platSub:
       'A digital ecosystem connecting car owners, workshops, self-service sites, detailing studios, specialists and automotive companies across Europe.',
     platFuture:
@@ -450,6 +457,8 @@ export const dict: Record<LangCode, Dictionary> = {
       'JabPoint — это автомобильный клуб и место для общения, а не только бокс, куда оставляют машину.',
     platBadge: 'Скоро',
     platTitle: 'JabPoint Platform',
+    platTeaser:
+      'Скоро — новости и масштабные обновления платформы и сервиса. Следите за анонсами.',
     platSub:
       'Цифровая экосистема, объединяющая автовладельцев, автосервисы, сервисы самообслуживания, детейлинг-студии, специалистов и автокомпании по всей Европе.',
     platFuture:
