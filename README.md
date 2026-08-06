@@ -64,7 +64,11 @@ Fallback / Pages URL: https://yurmil.github.io/JabPoint-site/
 1. Push to GitHub (`main`).
 2. **Settings → Pages → Source → GitHub Actions**.
 3. **Settings → Pages → Custom domain** → `jabpoint.ee` (and enable HTTPS).
-4. Workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) deploys `dist` on push to `main`.
+4. Workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) deploys on push to `main`.
+
+**Pre-release / test preview:** push to branch `staging` → live at  
+https://yurmil.github.io/JabPoint-site/staging/ (also `https://jabpoint.ee/staging/`).  
+See [docs/staging.md](docs/staging.md).
 
 Or: `npm run deploy`.
 

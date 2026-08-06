@@ -1,0 +1,100 @@
+name: Deploy staging preview
+
+# Publishes a non-release preview under /staging/ on the same GitHub Pages site.
+# Production root stays on main; this workflow rebuilds both so /staging/ is not wiped.
+
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging (preview)
+        uses: actions/checkout@v4
+        with:
+          path: preview
+
+      - name: Checkout main (production root)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: prod
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: preview/package-lock.json
+
+      - name: Install (production)
+        working-directory: prod
+        run: npm ci
+
+      - name: Install (staging)
+        working-directory: preview
+        run: npm ci
+
+      - name: Resolve production maintenance mode
+        id: maint
+        working-directory: prod
+        env:
+          REPO_VAR: ${{ vars.MAINTENANCE_MODE }}
+        run: |
+          RAW="${REPO_VAR:-false}"
+          RAW_LC=$(printf '%s' "$RAW" | tr '[:upper:]' '[:lower:]')
+          case "$RAW_LC" in
+            true|1|yes|on) FLAG=true ;;
+            *) FLAG=false ;;
+          esac
+          echo "enabled=$FLAG" >> "$GITHUB_OUTPUT"
+          echo "Production maintenance mode: $FLAG"
+
+      - name: Build production root
+        working-directory: prod
+        run: npm run build
+        env:
+          VITE_MAINTENANCE_MODE: ${{ steps.maint.outputs.enabled }}
+          VITE_GOOGLE_MAPS_EMBED_KEY: ${{ secrets.VITE_GOOGLE_MAPS_EMBED_KEY }}
+
+      - name: Build staging preview
+        working-directory: preview
+        run: npm run build
+        env:
+          VITE_STAGING: true
+          VITE_GOOGLE_MAPS_EMBED_KEY: ${{ secrets.VITE_GOOGLE_MAPS_EMBED_KEY }}
+
+      - name: Assemble Pages artifact
+        run: |
+          mkdir -p _site
+          cp -a prod/dist/. _site/
+          mkdir -p _site/staging
+          cp -a preview/dist/. _site/staging/
+          printf 'User-agent: *\nDisallow: /\n' > _site/staging/robots.txt
+          rm -f _site/staging/CNAME _site/staging/sitemap.xml
+          echo "Root = main, /staging/ = preview ref"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { isStagingDeploy } from '../data/deployTarget'
 import { seo } from '../data/seo'
 import type { Dictionary } from '../data/i18n'
 import type { LangCode } from '../data/site'
@@ -41,6 +42,14 @@ export function useDocumentMeta(lang: LangCode, t: Dictionary) {
     setMeta('name', 'twitter:title', t.seoTitle)
     setMeta('name', 'twitter:description', t.seoDescription)
 
-    setLink('canonical', seo.canonicalUrl)
+    if (isStagingDeploy()) {
+      setMeta('name', 'robots', 'noindex, nofollow')
+      const path = window.location.pathname.endsWith('/')
+        ? window.location.pathname
+        : `${window.location.pathname}/`
+      setLink('canonical', `${window.location.origin}${path}`)
+    } else {
+      setLink('canonical', seo.canonicalUrl)
+    }
   }, [lang, t])
 }

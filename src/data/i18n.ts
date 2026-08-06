@@ -94,6 +94,7 @@ export type Dictionary = {
   maintTitle2: string
   maintSub: string
   maintNote: string
+  stagingBanner: string
 }
 
 export const dict: Record<LangCode, Dictionary> = {
@@ -236,6 +237,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintSub:
       'Uuendame JabPointi veebilehte. Uudiseid ja kontakte leiad sotsiaalmeediast — oleme peagi tagasi.',
     maintNote: 'Plaasi tn 2, Tallinn · peagi taas online',
+    stagingBanner: 'Test / staging — mitte live-sait',
   },
 
   en: {
@@ -377,6 +379,7 @@ export const dict: Record<LangCode, Dictionary> = {
     maintSub:
       'We are updating the JabPoint website. Follow us on social media for news — we will be back shortly.',
     maintNote: 'Plaasi tn 2, Tallinn · back online soon',
+    stagingBanner: 'Test / staging — not the live site',
   },
 
   ru: {
@@ -518,5 +521,6 @@ export const dict: Record<LangCode, Dictionary> = {
     maintSub:
       'Мы обновляем сайт JabPoint. Новости и контакты — в соцсетях, скоро вернёмся.',
     maintNote: 'Plaasi tn 2, Tallinn · скоро снова online',
+    stagingBanner: 'Test / staging — не боевой сайт',
   },
 }
